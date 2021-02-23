@@ -41,27 +41,28 @@ In a Slack DM to your assigned instructor, drop the repo link, DTR and GitHub pa
 * Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
 
 
-HTML
-- [  ] Add form element to include input boxes and button
-- [  ] Add body element to contain idea title boxes
-- [  ] Add aside element to represent left-hand side bar
+##### HTML
+- [ √ ] Add form element to include input boxes and button
+- [ √ ] Add section element to contain idea box grid
+- [  ] Add aside element to contain left-hand side bar
+###### Form Element
+- [ √ ] Add 'title-input' and 'body-input' elements with respective labels
+- [ √ ] Add 'save-button' button
+- [ √ ] Add 'search-ideas' section element
+- [ √ ] Add 'search-button' button and 'search-input' input
+###### Card Display Element
+- [ √ ] Add 'card-display' element to contain grid of idea boxes
+- [ √ ] Add 'idea-box' element to populate grid
+- [ √ ] Add 'upper-box' nav to contain 'favorite' and 'remove' buttons
+- [ √ ] Add 'favorite' and 'remove' buttons
+- [ √ ] Add 'lower-box' footer to contain 'comment' button and 'comment' input *
+- [ √ ] Add 'card-body' div with h3 'title' and <p> body element
+###### Aside Element
+- [ √ ] Add h2 'element for "IdeaBox" title
+- [ √ ] Add <div> container for "Filter Starred Ideas" and button
+- [ √ ] Add "Show Starred Ideas" button element and "Filter Starred Ideas" label element
 
-Form Element
-- [  ] Add 'title-input' and 'body-input' elements with respective labels
-- [  ] Add 'save-button' button
-- [  ] Add 'search-ideas' section element
-- [  ] Add 'search-button' button and 'search-input' input
-Body Element
-- [  ] Reference 'mini-poster-grid' for layout of idea box elements
-- [  ] Add 'idea-box' element to appear throughout poster grid
-- [  ] Add 'upper-box' nav/header and 'lower-box' div/footer to contain buttons
-- [  ] Add 'favorite', 'remove', and 'comment' buttons within 'idea-box' element with unique alt tags
-- [  ] Add h3 'title' and <p> elements
-Aside Element
-- [  ] Add h2 'header' / <span> element for "IdeaBox" title
-- [  ] Add <div> container for "Filter Starred Ideas" and button
-- [  ] Add "Show Starred Ideas" button
-
+* Should we use a dropdown menu for the comment input element?
 
 CSS
 

@@ -6,31 +6,6 @@
     <link rel="stylesheet" type="text/css" href="./styles.css">
   </head>
   <body>
-    <form>
-      <input class="title-input">Title</input>
-      <input class="body-input">Body</input>
-      <button class="save-button">Save</button>
-      <span class="search-ideas">
-        <button class="search-button"></button>
-        <input class="search-input" placeholder="Search Ideas"></input>
-      </span>
-    </form>
-    <section class="card-display">
-      <article class="idea-box">
-        <nav>
-          <button class="favorite-button"></button>
-          <button class="remove-button"></button>
-        </nav>
-        <div class="card-body">
-          <h3 class="title"></h3>
-          <p></p>
-        </div>
-        <footer>
-          <button class="comment-button"></button>
-          <input class="comment-input">Comment</input>
-        </footer>
-      </article>
-    </section>
     <aside>
       <h2>IdeaBox</h2>
       <div class="starred-ideas-box">
@@ -38,6 +13,33 @@
         <button class="show-starred-ideas">Show Starred Ideas</button>
       </div>
     </aside>
+  <section class="right-side">
+    <form>
+      <label for="titleInput">Title</label>
+      <input class="title-input" id="titleInput"></input>
+      <label for="bodyInput">Body</label>
+      <input class="body-input" id="bodyInput">Body</input>
+      <button class="save-button">Save</button>
+      <span class="search-ideas">
+        <button class="search-button"></button>
+        <input class="search-input" placeholder="Search Ideas"></input>
+      </span>
+    </form>
+    <article class="idea-box">
+      <nav>
+        <button class="favorite-button"></button>
+        <button class="remove-button"></button>
+      </nav>
+      <div class="card-body">
+        <h3 class="title"></h3>
+        <p></p>
+      </div>
+      <footer>
+        <button class="comment-button"></button>
+        <input class="comment-input">Comment</input>
+      </footer>
+    </article>
+  </section>
     <script src="./src/main.js"></script>
   </body>
 </html>

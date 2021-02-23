@@ -56,88 +56,35 @@
     * Pat: mornings are hectic, evenings after 5:30 are wide open!
 
 11. What is your style for giving feedback? Does anything ever hold you back from giving feedback?
-    * Pete:
-    * Ellie:
-    * Pat:
+    * Pete: Not wanting to be unconstructively critical. be thoughtful and empathetic. bring a solution to problems.
+    * Ellie: ditto ^^
+    * Pat: ditto ^^
 
 12. What do you identify as being your biggest strength(s) technically, as they relate to this project? Where do you feel you could use improvement in your technical skills, as they relate to this project? How can our team help support you in improving these skills?
-    * Pete:
-    * Ellie:
-    * Pat:
+    * Pete: Would like to have a further understanding of the data model and DOM and best practices.
+    * Ellie: ^^ as well as terms of art
+    * Pat: ^^
 
 13. What tools do you want to use to manage the project?
-    * Pete:
-    * Ellie:  
-    * Pat:
+    * Pete: We're going to create an md file with a roadmap
+    * Ellie:  ^^
+    * Pat: ^^
 
 14. How do you want the group to solve problems when members run into issues with features of the project?
-    * Pete:
-    * Ellie:
-    * Pat:
+    * Pete: 👇
+    * Ellie: if were together then work together, if ew'/re separate reach out to eachother, then try not to struggle for more than a half hour, and then utilize our rocks/mentors
+    * Pat: 👆
 
 15. How do you know if a project is successful? How can we achieve that as a group?
-    * Pete:
-    * Ellie:
-    * Pat:
+    * Pete: 👇
+    * Ellie: Making it to the end is ideal, but learning together and having a deep understanding of what we're doing is very important.
+    * Pat: 👆
 
 16. How will we recognize each other's successes and celebrate them?
-    * Pete:
-    * Ellie:
-    * Pat:
+    * Pete: Recognizing progress and acknowledging progress!
+    * Ellie: 👆
+    * Pat: 👆
 
 Any additional questions that you would like to add:
 
-17. Pomodoro Schedule:
-
-18. Abilities & technical Growth expectations:
-    * Pete:
-    * Ellie:
-    * Pat:
-
-## Remote Work Considerations During the COVID-19 Quarantine
-* What does remote focus look like for you? (headphones, distractions minimized (tv, family stuff, etc), video on)
-
-* When working from the same place where you live, life can get in the way. What are some potential life things that could affect your ability to focus, and what plan can we come up with to approach those moments?
-
-* If we encounter issues such as power outages, Zoom difficulties, or bad wifi, what backup plans can we have in place? (This could have answers like asking a neighbor to borrow wifi, using cellphone hotspot for internet, switching to slack or skype.
-
-* Pomodoro breaks are especially important for remote work and doubly so for quarantine. What should our Pom cadence look like? How will hold ourselves accountable?
-
-* Quarantine is tough, so it’s important to make note of our mental/emotional state when working with others. How can we make space to check in on each other’s well being, in addition to the work that needs to be done?
-
-
-
-
-
-Template for DTR Memo
-Project:
-
-Group Member Names:
-
-Goals and Expectations for the Project (What does each group member hope to get out of this project? What do we want to achieve as a team? How will we know that we're successful?):
-
-Team strengths & collaboration styles (consider discussing your Pairin qualities here):
-
-How we can use our strengths to overcome obstacles:
-
-Schedule Expectations (When are we available to work together and individually? What constraints do we have? Make sure to discuss the remote questions above in regards to this section):
-
-Communication Expectations (How and often will we communicate? How do we keep lines of communication open? How will we make decisions as a team? How will we communicate about our emotional and mental well-being with each other?):
-
-Abilities & Growth Expectations (Technical strengths and areas for desired improvement):
-
-Workload Expectations (What features do we each want to work on?):
-
-Workflow Expectations (Git workflow/Tools/Code Review/Reviewing Pull Requests/Debugging and Problem-solving Techniques):
-
-Pomodoro Break Schedule:
-
-Expectations for giving and receiving feedback:
-
-Additional Remote Considerations:
-
-Project management tools we will use (GitHub projects or Trello are popular tools):
-
-Day 1 Agenda:
-
-Additional Notes:
+17. Pomodoro Schedule: 30 minute stretches with 6 minute breaks

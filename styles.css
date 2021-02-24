@@ -58,7 +58,7 @@ h2 {
   margin: 2em 1em 2em 1em;
 }
 
-/* ****** RIGHT SIDE SECTION ******  */
+/* ****** RIGHT SIDE SECTIONS ******  */
 
 section {
   border: 1px blue solid;
@@ -91,7 +91,7 @@ section {
   justify-content: flex-start;
 };
 
-form > input {
+input {
   margin-top: 2em;
   border: 4px green solid;
   display: flex;
@@ -107,13 +107,74 @@ form > input {
     height: 2.5em;
 }
 
-.search-input
+/* ****** SEARCH IDEAS ******  */
 
+span {
+  margin-top: 2em;
+  border: 3px;
+  border-color: #363667;
+  height: 2.5em;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.search-button {
+  background: url(assets/search.svg);
+  background-repeat: no-repeat;
+  background-color:  #363667;
+  height: 2.85em;
+  width: 2.5em;
+  padding-bottom: 2px;
+}
+
+.search-input {
+  height: 2.5em;
+  width: 100%;
+}
 
 /* ****** CUSTOM FORM INPUTS ******  */
-
 
 article {
   width: 100%;
   align-items: stretch;
 };
+
+/* ****** MINI CUSTOM CARD ******  */
+
+.custom-card {
+  border-width: 1px solid #1F1F3D;
+  height: 75px;
+  width: 50px;
+}
+
+.favorite-button {
+  background: url(assets/star.svg);
+  background-repeat: no-repeat;
+}
+
+.remove-button {
+  background: url(assets/delete-active.svg);
+  background-repeat: no-repeat;
+}
+
+h3 {
+  font-weight: bold;
+  color: #1F1F3D;
+}
+
+p {
+
+}
+
+footer {
+  border-top:
+}
+
+.comment-button {
+
+}
+
+.comment-input {
+
+}

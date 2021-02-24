@@ -66,23 +66,23 @@ In a Slack DM to your assigned instructor, drop the repo link, DTR and GitHub pa
 
 CSS
 
-Form Element
-- [  ] Add 'form-style' class with background-color and sizing using flex-direction: column and align-content: center
-- [  ] Add 'rectangle' class with rectangle box sizing
-- [  ] Add 'title-box' class with coloration
-- [  ] Add 'body-box' class with border and sizing
-- [  ] Add 'save-button' class with coloration
-- [  ] Add 'search-ideas' class with style and sizing
-- [  ] Add 'search-button' class with style and sizing
-- [  ] Add 'idea-title-box' class (with Flexbox) for style throughout idea box grid
+##### Form Element
+- [ √ ] Add 'form-style' class with background-color and sizing using flex-direction: column and align-content: center
+- [ √ ] Add 'rectangle' class with rectangle box sizing
+- [ √ ] Add 'title-box' class with coloration
+- [ √ ] Add 'body-box' class with border and sizing
+- [ √ ] Add 'save-button' class with coloration
+- [ √ ] Add 'search-ideas' class with style and sizing
+- [ √ ] Add 'search-button' class with style and sizing
+- [ √ ] Add 'idea-title-box' class (with Flexbox) for style throughout idea box grid
 
-Body Element
+##### Body Element
 - [  ] Add 'idea-box' class with unique font-weight, color, background-color, order
 - [  ] Add 'upper-box' class with unique background-color
 - [  ] Add 'lower-box class with unique color and background-color, and layout
 - [  ] Add 'favorite', 'remove', and 'comment' classes, each with unique symbol, coloration
 
-Aside Element
+##### Aside Element
 - [  ] Add styling for 'aside' element with unique background-color and sizing
 - [  ] Add 'upper-aside-box' class with unique color and sizing
 - [  ] Add 'lower-aside-box' class with unique color, top and bottom border, and sizing
@@ -91,7 +91,7 @@ Aside Element
 ---
 
 #### Iteration 1 and beyond
-##### TARGET: 9pm on Mon 2.23
+##### TARGET: 9pm on Tues 2.23
 
 We strongly recommend that you complete Iteration 0 before moving on to the next iterations!
 
@@ -104,12 +104,12 @@ Your entire application will consist of one HTML page or template. You will have
 
 * An idea.js file that contains an Idea class.
 * Idea methods must include, but are not limited to:
-- constructor
-- saveToStorage (should only have one job which is to save the instance to storage)
-- deleteFromStorage
-- updateIdea (should be able to update the idea’s title, body, or starred state)
-- A main.js file that contains all DOM related JavaScript.
-- Note The idea.js file must be the first script in your HTML so that your main.js file has access to your Idea class.
+  - constructor
+  - saveToStorage (should only have one job which is to save the instance to storage)
+  - deleteFromStorage
+  - updateIdea (should be able to update the idea’s title, body, or starred state)
+  - A main.js file that contains all DOM related JavaScript.
+  - Note The idea.js file must be the first script in your HTML so that your main.js file has access to your Idea class.
 
 ##### Data Model
 An idea has an id, title, body, and star.
@@ -117,6 +117,16 @@ The id should be a unique identifier. (Note: generating a random number does not
 title and body are strings.
 star is a boolean.
 Each idea should be created as an object instance of the Idea class. Once an idea object is created, all that data can be used to update the DOM. That object should also be added to a list of all the ideas your application currently has. This should probably be a global variable in your main.js.
+
+JS
+- [ √ ] Create class constructor function, which includes all relevant class properties
+- [ √ ] Create a customCards array to contain new class instances (pushed in via saveToStorage)
+- [ √ ] Create saveToStorage function, which will save a given class instance to customCards
+- [  ] Create deleteFromStorage function to iterate through customCards and splice out element by specific index
+- [  ] Create updateIdea function to access specific customCards index and update property values
+    * Either pass in new property values via parameters or by storing input values in global variables
+- [  ] Connect idea.js to main.js DOM file
+
 
 --- 
 

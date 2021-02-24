@@ -17,7 +17,7 @@
     <div class="wrapper">
       <form class="custom-form">
         <label for="titleInput">Title</label>
-        <input class="custom-input" id="titleInput"></input>
+        <input class="body-input" id="titleInput"></input>
         <label for="bodyInput">Body</label>
         <input class="custom-input" id="bodyInput"></input>
         <button class="save-button">Save</button>
@@ -28,18 +28,20 @@
       </form>
     </div>
     <article class="idea-box">
-      <nav>
-        <button class="favorite-button"></button>
-        <button class="remove-button"></button>
-      </nav>
-      <div class="card-body">
-        <h3 class="title"></h3>
-        <p></p>
+      <div class="custom-card">
+        <nav>
+          <button class="favorite-button"></button>
+          <button class="remove-button"></button>
+        </nav>
+        <div class="card-body">
+          <h3 class="title"></h3>
+          <p></p>
+        </div>
+        <footer>
+          <button class="comment-button"></button>
+          <input class="comment-input">Comment</input>
+        </footer>
       </div>
-      <footer>
-        <button class="comment-button"></button>
-        <input class="comment-input">Comment</input>
-      </footer>
     </article>
   </section>
     <script src="./src/main.js"></script>

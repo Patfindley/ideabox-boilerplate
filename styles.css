@@ -144,38 +144,51 @@ article {
 
 /* ****** MINI CUSTOM CARD ******  */
 
-.custom-card {
-  height: 35em;
-  width: 20em;
+h3 {
+  margin-left: 1em;
+  font-weight: bold;
+  color: #1F1F3D;
+}
+
+p {
+  margin-left: 1em;
+}
+
+.comment-button {
+  background-color: #5356A5;
+  color: #FFFFFF;
+  font-weight: bold;
+  width: 100%;
+  height: 2.5em;
+}
+
+article > .custom-card {
+  height: 15em;
+  width: 12em;
   border: 2px #1F1F3D solid;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+nav {
+  background-color: #1F1F3D;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 2em;
+}
+
 .favorite-button {
   background: url(assets/star.svg);
   background-repeat: no-repeat;
+  border: none;
+  width: 82%;
 }
 
 .remove-button {
   background: url(assets/delete-active.svg);
   background-repeat: no-repeat;
-}
-
-h3 {
-  font-weight: bold;
-  color: #1F1F3D;
-}
-
-p {
-
-}
-
-footer {
-  border-top: 1em solid #1F1F3D;
-}
-
-.comment-button {
-
+  border: none;
+  width: 18%;
 }

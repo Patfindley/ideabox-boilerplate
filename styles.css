@@ -91,9 +91,9 @@ section {
   justify-content: flex-start;
 };
 
-input {
+.body-input {
   margin-top: 2em;
-  border: 4px green solid;
+  border: 2em solid #1F1F3D;
   display: flex;
   justify-content: space-around;
 }
@@ -138,14 +138,19 @@ span {
 article {
   width: 100%;
   align-items: stretch;
+  display: flex;
+  justify-content: center;
 };
 
 /* ****** MINI CUSTOM CARD ******  */
 
 .custom-card {
-  border-width: 1px solid #1F1F3D;
-  height: 75px;
-  width: 50px;
+  height: 35em;
+  width: 20em;
+  border: 2px #1F1F3D solid;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .favorite-button {
@@ -168,13 +173,9 @@ p {
 }
 
 footer {
-  border-top:
+  border-top: 1em solid #1F1F3D;
 }
 
 .comment-button {
-
-}
-
-.comment-input {
 
 }

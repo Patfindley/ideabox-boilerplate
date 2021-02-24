@@ -90,8 +90,10 @@ h2 {
   justify-content: flex-start;
 };
 
-.custom-input {
-  padding: 2em 2em;
+form > input {
+  border: 4px green solid;
+  display: flex;
+  justify-content: space-around;
 }
 
 article {

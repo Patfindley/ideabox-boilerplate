@@ -109,18 +109,21 @@ section {
 
 /* ****** SEARCH IDEAS ******  */
 
+
 span {
   margin-top: 2em;
-  border: 3px;
+  border: 5px;
   border-color: #363667;
   height: 2.5em;
   width: 100%;
   display: flex;
   align-items: stretch;
 }
-
 .search-button {
   background: url(assets/search.svg);
+  background-position: center;
+  background-size: 75%;
+  border: 0;
   background-repeat: no-repeat;
   background-color:  #363667;
   height: 2.85em;
@@ -131,6 +134,7 @@ span {
 .search-input {
   height: 2.5em;
   width: 100%;
+
 }
 
 /* ****** CUSTOM FORM INPUTS ******  */
@@ -144,7 +148,7 @@ article {
 
 /* ****** MINI CUSTOM CARD ******  */
 
-h3 {
+.title {
   margin-left: 1em;
   font-weight: bold;
   color: #1F1F3D;
@@ -191,4 +195,29 @@ nav {
   background-repeat: no-repeat;
   border: none;
   width: 18%;
+}
+
+footer {
+  background-color: #5356A4;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 2em;
+  border-top: 1px #1f1f3d solid;
+}
+
+.comment-button {
+  background: url(assets/comment.svg);
+  background-repeat: no-repeat;
+  width: 18%;
+  border: 0;
+}
+
+.comment-label {
+    color: #E9E9F3;
+    font-weight: bold;
+    margin-top: .5em;
+    width: 82%;
+    height: 2.5em;
+  border: 0;
 }

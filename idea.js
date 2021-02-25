@@ -58,7 +58,7 @@ function saveToStorage() {
 // }
 
 function updateMiniCard() {
-  customCard.classList.toggle("hidden");
+  customCard.classList.remove("hidden");
   customCard.innerHTML = "";
 
   for(var i = 0; i < customCards.length; i++) {

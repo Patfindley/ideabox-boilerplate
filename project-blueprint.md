@@ -44,7 +44,7 @@ In a Slack DM to your assigned instructor, drop the repo link, DTR and GitHub pa
 ##### HTML
 - [ √ ] Add form element to include input boxes and button
 - [ √ ] Add section element to contain idea box grid
-- [  ] Add aside element to contain left-hand side bar
+- [ √ ] Add aside element to contain left-hand side bar
 ###### Form Element
 - [ √ ] Add 'title-input' and 'body-input' elements with respective labels
 - [ √ ] Add 'save-button' button
@@ -64,29 +64,18 @@ In a Slack DM to your assigned instructor, drop the repo link, DTR and GitHub pa
 
 * Should we use a dropdown menu for the comment input element?
 
-CSS
+**CSS**
 
 ##### Form Element
-- [ √ ] Add 'form-style' class with background-color and sizing using flex-direction: column and align-content: center
-- [ √ ] Add 'rectangle' class with rectangle box sizing
-- [ √ ] Add 'title-box' class with coloration
-- [ √ ] Add 'body-box' class with border and sizing
-- [ √ ] Add 'save-button' class with coloration
-- [ √ ] Add 'search-ideas' class with style and sizing
-- [ √ ] Add 'search-button' class with style and sizing
-- [ √ ] Add 'idea-title-box' class (with Flexbox) for style throughout idea box grid
+- [  ] Resize title and body <label> elements
+- [  ] Add border-radius property to all form elements
+- [  ] Tweak font size and weight for all form text (and check to see if correct font is applying)
+- [  ] Adjust margin/padding to position all elements correctly
+- [  ] Delete pink border
 
-##### Body Element
-- [  ] Add 'idea-box' class with unique font-weight, color, background-color, order
-- [  ] Add 'upper-box' class with unique background-color
-- [  ] Add 'lower-box class with unique color and background-color, and layout
-- [  ] Add 'favorite', 'remove', and 'comment' classes, each with unique symbol, coloration
-
-##### Aside Element
-- [  ] Add styling for 'aside' element with unique background-color and sizing
-- [  ] Add 'upper-aside-box' class with unique color and sizing
-- [  ] Add 'lower-aside-box' class with unique color, top and bottom border, and sizing
-- [  ] Add "starred-ideas-button' class with unique color, background-color, and sizing
+##### Grid Element
+- [  ] *Possibly* add small container for favorite-button <button>
+- [  ] Bang out positioning of title and paragraph elements
 
 ---
 
@@ -124,7 +113,7 @@ JS
 - [ √ ] Create saveToStorage function, which will save a given class instance to customCards
 - [  ] Create deleteFromStorage function to iterate through customCards and splice out element by specific index
 - [  ] Create updateIdea function to access specific customCards index and update property values
-    * Either pass in new property values via parameters or by storing input values in global variables
+      * Either pass in new property values via parameters or by storing input values in global variables
 - [  ] Connect idea.js to main.js DOM file
 
 

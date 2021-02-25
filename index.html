@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>IdeaBox</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-  </head>
-  <body>
-    <aside>
-      <h2>IdeaBox</h2>
-      <div class="starred-ideas-box">
-        <label class="filter-starred-ideas">Filter Starred Ideas</label>
-        <button class="show-starred-button">Show Starred Ideas</button>
-      </div>
-    </aside>
+
+<head>
+  <title>IdeaBox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+  <aside>
+    <h2>IdeaBox</h2>
+    <div class="starred-ideas-box">
+      <label class="filter-starred-ideas">Filter Starred Ideas</label>
+      <button class="show-starred-button">Show Starred Ideas</button>
+    </div>
+  </aside>
   <section class="right-side">
     <div class="wrapper">
       <form class="custom-form">
         <label for="titleInput">Title</label>
-        <input class="body-input" id="titleInput"></input>
+        <input class="title-input" id="titleInput"></input>
         <label for="bodyInput">Body</label>
-        <input class="custom-input" id="bodyInput"></input>
-        <button class="save-button">Save</button>
+        <input class="body-input" id="bodyInput"></input>
+        <button class="save-button" id="saveButton">Save</button>
         <span class="search-ideas">
           <button class="search-button"></button>
           <input class="search-input" placeholder="Search Ideas"></input>
@@ -31,19 +33,21 @@
       <div class="custom-card">
         <nav>
           <button class="favorite-button"></button>
-          <button class="remove-button"></button>
+          <button class="remove-button" id="removeButton"></button>
         </nav>
         <div class="card-body">
           <h3 class="title">Title</h3>
           <p>stuff and things and stuff and super heroes</p>
         </div>
         <footer>
-        <button class="comment-button"></button>
-        <label class="comment-label">Comment</label>
-      </footer>
+          <button class="comment-button"></button>
+          <label class="comment-label">Comment</label>
+        </footer>
       </div>
     </article>
   </section>
-    <script src="./src/main.js"></script>
-  </body>
+  <script src="./src/main.js"></script>
+  <script src="./idea.js"></script>
+</body>
+
 </html>

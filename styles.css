@@ -139,14 +139,20 @@ span {
 
 /* ****** CUSTOM FORM INPUTS ******  */
 
-article {
+.idea-box {
   width: 100%;
-  align-items: stretch;
-  display: flex;
-  justify-content: center;
 };
 
 /* ****** MINI CUSTOM CARD ******  */
+
+
+
+.idea-grid {
+  display: grid;
+  grid-gap: 5em;
+  padding: 3em;
+
+}
 
 .title {
   margin-left: 1em;

@@ -18,6 +18,7 @@ var currentCard;
 
 saveButton.addEventListener('click', saveToStorage);
 
+
 // class constructor
 
 class Idea {
@@ -36,48 +37,37 @@ function saveToStorage() {
   event.preventDefault();
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
-
   updateMiniCard();
-
-  console.log(currentCard);
 }
 
 // function to splice out card element from customCards array
 
-// removeButton.addEventListener("click", deleteFromStorage(event) {
-//   // add listener to 'click' event of "this" remove button's parent element
-//   // assign that element's value to removalCard variable
-//   // var removalCard;
-//   // using that removalCard's id, iterate through customCards array and use conditional to match with array index with same id value
-//   // for (var i = 0; i < customCards.length; i++) {
-//     if (event.target.id === this.id) {
-//       customCards.splice(i, 1);
-//     }
-//   }
-//   // run addToCardDisplay to update DOM and refresh page
-//   updateCardDisplay;
-// }
-
-function updateMiniCard() {
-  customCard.classList.remove("hidden");
-  ideaGrid.innerHTML = "";
-  ideaGrid
-  for(var i = 0; i < customCards.length; i++) {
-    ideaGrid.innerHTML += `
-    <div class="custom-card">
-    <nav>
-      <button class="favorite-button"></button>
-      <button class="remove-button" id="removeButton"></button>
-    </nav>
-    <div class="card-body">
-      <h2>${customCards[i].title}</h2>
-      <p>${customCards[i].body} </p>
-   </div>
-      <footer>
-        <button class="comment-button"></button>
-        <label class="comment-label">Comment</label>
-      </footer>
-      </div>
-  `
+ideaGrid.addEventListener("click", function(event) {
+  // add listener to 'click' event of "this" remove button's parent element
+  // assign that element's value to removalCard variable
+  // var removalCard;
+  // using that removalCard's id, iterate through customCards array and use conditional to match with array index with same id value
+  if (event.target.className === "remove-button") {
+    for (var i = 0; i < customCards.length; i++) {
+      // console.log(event.currentTarget.id);
+      console.log(event);
+    //   if (customCards[i].id === event.currentTarget.id) {
+    //     console.log(customCards[i],e);
+    //     customCards.splice(i, 1);
+    //   }
+    // }
+    }
   }
-}
+  // run addToCardDisplay to update DOM and refresh page
+  updateMiniCard;
+});
+
+
+// var parent = document.querySelector('.parent');
+
+// parent.addEventListener('click', function (event) {
+//   if (event.target.className === 'click-me') {
+//     // do your action on your 'button' or whatever it is you're listening for
+//   }
+// });
+// If(event.target.className === “remove - button”) { OUR FOR LOOP }

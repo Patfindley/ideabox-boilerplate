@@ -8,6 +8,7 @@ var removeButton = document.getElementById("removeButton");
 
 var customCard = document.querySelector(".custom-card");
 
+var ideaGrid = document.querySelector(".idea-grid");
 // global variables
 
 var customCards = [];
@@ -60,9 +61,9 @@ function saveToStorage() {
 function updateMiniCard() {
   customCard.classList.remove("hidden");
   customCard.innerHTML = "";
-
+  ideaGrid
   for(var i = 0; i < customCards.length; i++) {
-    customCard.innerHTML += `
+    ideaGrid.innerHTML += `
     <nav>
       <button class="favorite-button"></button>
       <button class="remove-button" id="removeButton"></button>

@@ -145,19 +145,17 @@ span {
 
 /* ****** MINI CUSTOM CARD ******  */
 
-
-
-.idea-grid {
-  display: grid;
-  grid-gap: 5em;
-  padding: 3em;
-
-}
-
 .title {
   margin-left: 1em;
   font-weight: bold;
   color: #1F1F3D;
+}
+
+.idea-box > .idea-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: .75em;
 }
 
 p {

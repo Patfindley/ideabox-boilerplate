@@ -221,3 +221,7 @@ footer {
     height: 2.5em;
   border: 0;
 }
+
+.hidden {
+  display: none!important;
+}

@@ -60,10 +60,11 @@ function saveToStorage() {
 
 function updateMiniCard() {
   customCard.classList.remove("hidden");
-  customCard.innerHTML = "";
+  ideaGrid.innerHTML = "";
   ideaGrid
   for(var i = 0; i < customCards.length; i++) {
     ideaGrid.innerHTML += `
+    <div class="custom-card">
     <nav>
       <button class="favorite-button"></button>
       <button class="remove-button" id="removeButton"></button>
@@ -76,6 +77,7 @@ function updateMiniCard() {
         <button class="comment-button"></button>
         <label class="comment-label">Comment</label>
       </footer>
+      </div>
   `
   }
 }

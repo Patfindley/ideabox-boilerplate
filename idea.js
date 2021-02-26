@@ -2,6 +2,7 @@
 
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
+var inputFields = document.querySelectorAll(".user-input")
 
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
@@ -14,14 +15,21 @@ var ideaGrid = document.querySelector(".idea-grid");
 var customCards = [];
 var currentCard;
 
+
+
 // event listeners
 
-saveButton.addEventListener('click', function(event) {
+saveButton.addEventListener("click", function(event) {
   saveToStorage(event);
 });
 
+for(const inputField of inputFields) {
+inputField.addEventListener("input", function() {
+  disableSaveButton();
+})};
+
 ideaGrid.addEventListener("click", function(event) {
-  deleteFromData(event);
+  deleteFromStorage(event);
 });
 
 // class constructor
@@ -43,14 +51,36 @@ function saveToStorage(event) {
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
   updateMiniCard();
+  clearInput();
 }
 
 // function to splice out card element from customCards array
 
-function deleteFromData(e) {
+function deleteFromStorage(e) {
   if (e.target.classList.contains("remove-button")) {
     var index = e.target.closest("div").id;
     customCards.splice(index, 1);
     updateMiniCard();
   }
 };
+
+// function to clear input fields
+
+function clearInput() {
+  titleInput.value = "";
+  bodyInput.value = "";
+}
+
+function disableSaveButton() {
+  for(var i = 0; i < inputFields.length; i++) {
+    if (titleInput.value !== " " && bodyInput.value !== " ") {
+      saveButton.disabled = false;
+      saveButton.style.backgroundColor = "#363667";
+    // return;
+  }
+  }
+}
+
+// Change css save button default to lighter -> Save OG colorful
+//Add to css class
+// Add color change to function

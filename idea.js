@@ -16,7 +16,13 @@ var currentCard;
 
 // event listeners
 
-saveButton.addEventListener('click', saveToStorage);
+saveButton.addEventListener('click', function(event) {
+  saveToStorage(event);
+});
+
+ideaGrid.addEventListener("click", function(event) {
+  deleteFromData(event);
+});
 
 // class constructor
 
@@ -32,52 +38,19 @@ class Idea {
 
 // functions
 
-function saveToStorage() {
+function saveToStorage(event) {
   event.preventDefault();
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
-
   updateMiniCard();
-
-  console.log(currentCard);
 }
 
 // function to splice out card element from customCards array
 
-// removeButton.addEventListener("click", deleteFromStorage(event) {
-//   // add listener to 'click' event of "this" remove button's parent element
-//   // assign that element's value to removalCard variable
-//   // var removalCard;
-//   // using that removalCard's id, iterate through customCards array and use conditional to match with array index with same id value
-//   // for (var i = 0; i < customCards.length; i++) {
-//     if (event.target.id === this.id) {
-//       customCards.splice(i, 1);
-//     }
-//   }
-//   // run addToCardDisplay to update DOM and refresh page
-//   updateCardDisplay;
-// }
-
-function updateMiniCard() {
-  customCard.classList.remove("hidden");
-  ideaGrid.innerHTML = "";
-  ideaGrid
-  for(var i = 0; i < customCards.length; i++) {
-    ideaGrid.innerHTML += `
-    <div class="custom-card">
-    <nav>
-      <button class="favorite-button"></button>
-      <button class="remove-button" id="removeButton"></button>
-    </nav>
-    <div class="card-body">
-      <h2>${customCards[i].title}</h2>
-      <p>${customCards[i].body} </p>
-   </div>
-      <footer>
-        <button class="comment-button"></button>
-        <label class="comment-label">Comment</label>
-      </footer>
-      </div>
-  `
+function deleteFromData(e) {
+  if (e.target.classList.contains("remove-button")) {
+    var index = e.target.closest("div").id;
+    customCards.splice(index, 1);
+    updateMiniCard();
   }
-}
+};

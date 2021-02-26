@@ -15,6 +15,7 @@ var ideaGrid = document.querySelector(".idea-grid");
 var customCards = [];
 var currentCard;
 
+saveButton.disabled = true;
 
 
 // event listeners
@@ -25,12 +26,14 @@ saveButton.addEventListener("click", function(event) {
 
 for(const inputField of inputFields) {
 inputField.addEventListener("input", function() {
-  disableSaveButton();
+  enableSaveButton();
 })};
+
 
 ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
 });
+
 
 // class constructor
 
@@ -71,16 +74,33 @@ function clearInput() {
   bodyInput.value = "";
 }
 
-function disableSaveButton() {
-  for(var i = 0; i < inputFields.length; i++) {
-    if (titleInput.value !== " " && bodyInput.value !== " ") {
-      saveButton.disabled = false;
-      saveButton.style.backgroundColor = "#363667";
-    // return;
-  }
+// Input shit that we may not need
+
+function validateTitleInput() {
+  if (titleInput.value.length <= 25) {
+    enableSaveButton();
+  } else {
+    alert("Title must be 25 characters or less");
   }
 }
 
-// Change css save button default to lighter -> Save OG colorful
-//Add to css class
-// Add color change to function
+function validateBodyInput() {
+  if (bodyInput.value.length <= 50) {
+    enableSaveButton();
+  } else {
+    alert("Body must be 50 characters or less");
+  }
+}
+
+// function to disable/enable Save Button
+
+function enableSaveButton(title1, body1) {
+  for(var i = 0; i < inputFields.length; i++) {
+    if (inputFields[i].value === "") {
+      saveButton.disabled = true;
+    } else {
+      saveButton.disabled = false;
+      saveButton.style.backgroundColor = "#363667";
+    }
+  }
+}

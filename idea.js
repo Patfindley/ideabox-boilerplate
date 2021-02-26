@@ -61,6 +61,6 @@ function deleteFromStorage(e) {
 // function to clear input fields
 
 function clearInput() {
-  titleInputField.innerText = "";
-  bodyInputField.innerText = "";
+  titleInputField.value = "";
+  bodyInputField.value = "";
 }

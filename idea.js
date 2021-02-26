@@ -2,6 +2,8 @@
 
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
+var titleInputField = document.querySelector(".title-input");
+var bodyInputField = document.querySelector(".body-input");
 
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
@@ -21,7 +23,7 @@ saveButton.addEventListener('click', function(event) {
 });
 
 ideaGrid.addEventListener("click", function(event) {
-  deleteFromData(event);
+  deleteFromStorage(event);
 });
 
 // class constructor
@@ -43,14 +45,22 @@ function saveToStorage(event) {
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
   updateMiniCard();
+  clearInput();
 }
 
 // function to splice out card element from customCards array
 
-function deleteFromData(e) {
+function deleteFromStorage(e) {
   if (e.target.classList.contains("remove-button")) {
     var index = e.target.closest("div").id;
     customCards.splice(index, 1);
     updateMiniCard();
   }
 };
+
+// function to clear input fields
+
+function clearInput() {
+  titleInputField.innerText = "";
+  bodyInputField.innerText = "";
+}

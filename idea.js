@@ -2,8 +2,7 @@
 
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
-var titleInputField = document.querySelector(".title-input");
-var bodyInputField = document.querySelector(".body-input");
+var inputFields = document.querySelectorAll(".user-input")
 
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
@@ -16,11 +15,19 @@ var ideaGrid = document.querySelector(".idea-grid");
 var customCards = [];
 var currentCard;
 
+
+
 // event listeners
 
-saveButton.addEventListener('click', function(event) {
+saveButton.addEventListener("click", function(event) {
   saveToStorage(event);
 });
+
+for(const inputField of inputFields) {
+inputField.addEventListener("change", function() {
+  disableSaveButton();
+})
+};
 
 ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
@@ -61,6 +68,19 @@ function deleteFromStorage(e) {
 // function to clear input fields
 
 function clearInput() {
-  titleInputField.value = "";
-  bodyInputField.value = "";
+  titleInput.value = "";
+  bodyInput.value = "";
 }
+
+function disableSaveButton() {
+
+  if (titleInput.value != "" && bodyInput.value != "") {
+    saveButton.disabled = false;
+    saveButton.style.backgroundColor = "#363667";
+    return;
+  }
+}
+
+// Change css save button default to lighter -> Save OG colorful
+//Add to css class
+// Add color change to function

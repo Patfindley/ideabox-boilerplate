@@ -24,10 +24,9 @@ saveButton.addEventListener("click", function(event) {
 });
 
 for(const inputField of inputFields) {
-inputField.addEventListener("change", function() {
+inputField.addEventListener("input", function() {
   disableSaveButton();
-})
-};
+})};
 
 ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
@@ -74,10 +73,10 @@ function clearInput() {
 
 function disableSaveButton() {
 
-  if (titleInput.value != "" && bodyInput.value != "") {
+  if (titleInput.value !== " " && bodyInput.value !== " ") {
     saveButton.disabled = false;
     saveButton.style.backgroundColor = "#363667";
-    return;
+    // return;
   }
 }
 

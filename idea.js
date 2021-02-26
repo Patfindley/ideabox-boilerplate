@@ -24,8 +24,11 @@ saveButton.addEventListener("click", function(event) {
   saveToStorage(event);
 });
 
-titleInput.addEventListener("input", validateTitleInput);
-bodyInput.addEventListener("input", validateBodyInput);
+for(const inputField of inputFields) {
+inputField.addEventListener("input", function() {
+  enableSaveButton();
+})};
+
 
 ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
@@ -71,6 +74,8 @@ function clearInput() {
   bodyInput.value = "";
 }
 
+// Input shit that we may not need
+
 function validateTitleInput() {
   if (titleInput.value.length <= 25) {
     enableSaveButton();
@@ -86,6 +91,8 @@ function validateBodyInput() {
     alert("Body must be 50 characters or less");
   }
 }
+
+// function to disable/enable Save Button
 
 function enableSaveButton(title1, body1) {
   for(var i = 0; i < inputFields.length; i++) {

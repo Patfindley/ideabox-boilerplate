@@ -72,11 +72,12 @@ function clearInput() {
 }
 
 function disableSaveButton() {
-
-  if (titleInput.value !== " " && bodyInput.value !== " ") {
-    saveButton.disabled = false;
-    saveButton.style.backgroundColor = "#363667";
+  for(var i = 0; i < inputFields.length; i++) {
+    if (titleInput.value !== " " && bodyInput.value !== " ") {
+      saveButton.disabled = false;
+      saveButton.style.backgroundColor = "#363667";
     // return;
+  }
   }
 }
 

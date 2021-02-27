@@ -6,7 +6,7 @@ var inputFields = document.querySelectorAll(".user-input")
 
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
-
+var favoriteButton = document.getElementsByClassName("favorite-button");
 var customCard = document.querySelector(".custom-card");
 
 var ideaGrid = document.querySelector(".idea-grid");
@@ -24,9 +24,6 @@ saveButton.addEventListener("click", function(event) {
   saveToStorage(event);
 });
 
-// saveButton.addEventListener("mouseover", function(event) {
-//   mousePointerChange(event)
-// })
 
 for(const inputField of inputFields) {
 inputField.addEventListener("input", function() {
@@ -36,7 +33,9 @@ inputField.addEventListener("input", function() {
 
 ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
+  addFavorite(event);
 });
+
 
 
 // class constructor
@@ -53,7 +52,7 @@ class Idea {
 
 // functions
 
-function saveToStorage(event) {
+function saveToStorage() {
   event.preventDefault();
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
@@ -122,8 +121,10 @@ function disableSaveButton() {
   saveButton.disabled = true;
   saveButton.style.cursor = "not-allowed";
 }
-//find lightbulb mouse pointer
-// function mousePointerChange(event) {
-//   event.currentTarget
-//   saveButton.classList.add("cursor: not-allowed;")
-// }
+
+function addFavorite(e) {
+  if (e.target.classList.contains("favorite-button")) {
+    favoriteButton.style.background = "none"
+    favoriteButton.classList.toggle(".filled-star")
+  }
+};

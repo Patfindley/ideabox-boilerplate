@@ -189,11 +189,20 @@ nav {
   height: 2em;
 }
 
+.filled-star {
+  background: url(assets/star-active.svg);
+}
+
 .favorite-button {
   background: url(assets/star.svg);
   background-repeat: no-repeat;
   border: none;
-  width: 82%;
+  width: 18%;
+}
+
+
+.filler {
+  width: 66%
 }
 
 .remove-button {
@@ -230,4 +239,5 @@ footer {
 
 .hidden {
   display: none!important;
+
 }

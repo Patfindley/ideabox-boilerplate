@@ -189,24 +189,28 @@ nav {
   height: 2em;
 }
 
-.filled-star {
-  background: url(assets/star-active.svg);
-}
-
 .favorite-button {
   background: url(assets/star.svg);
   background-repeat: no-repeat;
   border: none;
   width: 18%;
+  display: inline;
 }
 
+.filled-star {
+  background: url(assets/star-active.svg);
+  background-repeat: no-repeat;
+  border: none;
+  width: 18%;
+  display: inline;
+}
 
 .filler {
   width: 66%
 }
 
 .remove-button {
-  background: url(assets/delete-active.svg);
+  background: url(assets/delete.svg);
   background-repeat: no-repeat;
   border: none;
   width: 18%;

@@ -6,7 +6,7 @@ var inputFields = document.querySelectorAll(".user-input")
 
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
-var favoriteButton = document.getElementsByClassName("favorite-button");
+var favoriteButton = document.getElementById("favoriteButton");
 var customCard = document.querySelector(".custom-card");
 
 var ideaGrid = document.querySelector(".idea-grid");
@@ -35,7 +35,6 @@ ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
   addFavorite(event);
 });
-
 
 
 // class constructor
@@ -124,7 +123,6 @@ function disableSaveButton() {
 
 function addFavorite(e) {
   if (e.target.classList.contains("favorite-button")) {
-    favoriteButton.style.background = "none"
-    favoriteButton.classList.toggle(".filled-star")
+    e.target.classList.toggle("filled-star");
   }
-};
+}

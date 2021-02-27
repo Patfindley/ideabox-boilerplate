@@ -24,6 +24,10 @@ saveButton.addEventListener("click", function(event) {
   saveToStorage(event);
 });
 
+// saveButton.addEventListener("mouseover", function(event) {
+//   mousePointerChange(event)
+// })
+
 for(const inputField of inputFields) {
 inputField.addEventListener("input", function() {
   enableSaveButton();
@@ -56,8 +60,6 @@ function saveToStorage(event) {
   updateMiniCard();
   clearInput();
   disableSaveButton()
-  //disable the Button
-  //change button color
 }
 
 // function to splice out card element from customCards array
@@ -99,22 +101,29 @@ function clearInput() {
 
 // function to disable/enable Save Button
 
-function enableSaveButton(title, body) {
-  if (titleInput.value === "") {
+function enableSaveButton() {
+  if (titleInput.value === "" && bodyInput.value === "") {
     saveButton.disabled = true;
-    return
+    return;
   }
   if (bodyInput.value === "") {
     saveButton.disabled = true;
-    return
+    return;
   }
   else {
     saveButton.disabled = false;
-    saveButton.style.backgroundColor = "#363667"
+    saveButton.style.backgroundColor = "#363667";
+    saveButton.style.cursor = "auto";
   }
 }
 
 function disableSaveButton() {
   saveButton.style.backgroundColor= "#E7E7FF";
   saveButton.disabled = true;
+  saveButton.style.cursor = "not-allowed";
 }
+//find lightbulb mouse pointer
+// function mousePointerChange(event) {
+//   event.currentTarget
+//   saveButton.classList.add("cursor: not-allowed;")
+// }

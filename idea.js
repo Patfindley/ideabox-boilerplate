@@ -60,6 +60,16 @@ function saveToStorage() {
   disableSaveButton()
 }
 
+// for (var i = 0; i < customCards.length; i++) {
+//   localStorage.setItem(`ideas`, JSON.stringify(customCards[i]));
+// }
+
+// PSEUDO:
+/*
+
+
+*/
+
 // function to splice out card element from customCards array
 
 function deleteFromStorage(e) {

@@ -81,7 +81,6 @@ section {
 }
 
 .custom-form {
-  border: 3px pink solid;
   background-color: #A9AAD2;
   color: #1F1F3D;
   height: 23em;
@@ -91,7 +90,7 @@ section {
   justify-content: flex-start;
 };
 
-.body-input {
+.user-input {
   margin-top: 2em;
   border: 2em solid #1F1F3D;
   display: flex;
@@ -156,7 +155,7 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: .75em;
+  /* margin: .75em; */
 }
 
 p {

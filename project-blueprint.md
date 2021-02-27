@@ -33,110 +33,41 @@ In a Slack DM to your assigned instructor, drop the repo link, DTR and GitHub pa
 
 ### Progression
 
-#### Iteration 0 - Desktop Layout
-##### TARGET: 9pm on Mon 2.22
+PSEUDO:
 
-* Plan to write the HTML and CSS so that your application matches this comp. Based on what you are building, you can anticipate that the Idea “cards” will not always be there on page load, but for now, they should.
+- [  ] 
 
-* Use the same text on your cards that is used in the spec so you can ensure your spacing/sizing is accurate.
-
-
-##### HTML
-- [ √ ] Add form element to include input boxes and button
-- [ √ ] Add section element to contain idea box grid
-- [ √ ] Add aside element to contain left-hand side bar
-###### Form Element
-- [ √ ] Add 'title-input' and 'body-input' elements with respective labels
-- [ √ ] Add 'save-button' button
-- [ √ ] Add 'search-ideas' section element
-- [ √ ] Add 'search-button' button and 'search-input' input
-###### Card Display Element
-- [ √ ] Add 'card-display' element to contain grid of idea boxes
-- [ √ ] Add 'idea-box' element to populate grid
-- [ √ ] Add 'upper-box' nav to contain 'favorite' and 'remove' buttons
-- [ √ ] Add 'favorite' and 'remove' buttons
-- [ √ ] Add 'lower-box' footer to contain 'comment' button and 'comment' input *
-- [ √ ] Add 'card-body' div with h3 'title' and <p> body element
-###### Aside Element
-- [ √ ] Add h2 'element for "IdeaBox" title
-- [ √ ] Add <div> container for "Filter Starred Ideas" and button
-- [ √ ] Add "Show Starred Ideas" button element and "Filter Starred Ideas" label element
-
-* Should we use a dropdown menu for the comment input element?
-
-**CSS**
-
-##### Form Element
-- [  ] Resize title and body <label> elements
-- [  ] Add border-radius property to all form elements
-- [  ] Tweak font size and weight for all form text (and check to see if correct font is applying)
-- [  ] Adjust margin/padding to position all elements correctly
-- [  ] Delete pink border
-
-##### Grid Element
-- [  ] *Possibly* add small container for favorite-button <button>
-- [  ] Bang out positioning of title and paragraph elements
-
----
-
-#### Iteration 1 and beyond
-##### TARGET: 9pm on Tues 2.23
-
-We strongly recommend that you complete Iteration 0 before moving on to the next iterations!
-
-##### Architecture
-For this project, we’ll be increasingly thinking about the “data model” and “DOM model” as separate entities. We’ll be using:
-
-* JSON and localStorage to persist data on page reload.
-* JavaScript to manage client-side interactions.
-Your entire application will consist of one HTML page or template. You will have two JavaScript files, for now:
-
-* An idea.js file that contains an Idea class.
-* Idea methods must include, but are not limited to:
-  - constructor
-  - saveToStorage (should only have one job which is to save the instance to storage)
-  - deleteFromStorage
-  - updateIdea (should be able to update the idea’s title, body, or starred state)
-  - A main.js file that contains all DOM related JavaScript.
-  - Note The idea.js file must be the first script in your HTML so that your main.js file has access to your Idea class.
-
-##### Data Model
-An idea has an id, title, body, and star.
-The id should be a unique identifier. (Note: generating a random number does not guarantee it will be unique)
-title and body are strings.
-star is a boolean.
-Each idea should be created as an object instance of the Idea class. Once an idea object is created, all that data can be used to update the DOM. That object should also be added to a list of all the ideas your application currently has. This should probably be a global variable in your main.js.
-
-JS
-- [ √ ] Create class constructor function, which includes all relevant class properties
-- [ √ ] Create a customCards array to contain new class instances (pushed in via saveToStorage)
-- [ √ ] Create saveToStorage function, which will save a given class instance to customCards
-- [  ] Create deleteFromStorage function to iterate through customCards and splice out element by specific index
-- [  ] Create updateIdea function to access specific customCards index and update property values
-      * Either pass in new property values via parameters or by storing input values in global variables
-- [  ] Connect idea.js to main.js DOM file
-
-
---- 
-
-#### Iteration 2 - Adding Ideas
+Iteration 4 - Local Storage & Filtering
 As a user,
 
-When I click “Save”,
-If I entered information in both the “Title” and “Body” input fields,
-I should see a new idea card with the provided title and body appear in the idea list
+When I create one idea successfully, then refresh the page,
+The idea card is still in the idea list
 As a user,
 
-When I click “Save”,
-If I entered information in both the “Title” and “Body” input fields,
-I should see the “Title” and “Body” input fields clear out
+When I create two cards successfully, delete one, then refresh the page,
+One idea card is still in the idea list (the one I did not delete)
 As a user,
 
-When I look at the “Save” button,
-When either the “Title” or “Body” inputs are empty,
-I should notice that the “Save” button is disabled because it is a lighter color and the cursor is not a pointer when I hover over it
+When I favorite an idea card, then refresh the page,
+That idea card is still in the “favorite” state with the filled in star icon
 As a user,
 
-When I click “Save”,
-And a new card is successfully created,
-I should not see the page reload
+When I click “Show Starred Ideas”
+I see only card that are favorited
+As a user,
+
+When I click “Show Starred Ideas”
+I see the text on that button has changed to “Show All Ideas”
+As a user,
+
+When I click “Show Starred Ideas”
+Then I click what is now “Show All Ideas”
+I see all ideas, favorited or not
+As a user,
+
+When I type a letter or phrase into the search bar, the cards should start filtering (no click needed)
+I now only see the cards that include the letter/phrase in the title or body
+As a user,
+
+When I backspace and delete something from the search bar, so that it’s empty
+I see all cards since no search criteria is being provided

@@ -55,6 +55,9 @@ function saveToStorage(event) {
   customCards.push(currentCard);
   updateMiniCard();
   clearInput();
+  disableSaveButton()
+  //disable the Button
+  //change button color
 }
 
 // function to splice out card element from customCards array
@@ -76,31 +79,42 @@ function clearInput() {
 
 // Input shit that we may not need
 
-function validateTitleInput() {
-  if (titleInput.value.length <= 25) {
-    enableSaveButton();
-  } else {
-    alert("Title must be 25 characters or less");
-  }
-}
 
-function validateBodyInput() {
-  if (bodyInput.value.length <= 50) {
-    enableSaveButton();
-  } else {
-    alert("Body must be 50 characters or less");
-  }
-}
+//**********COME BACK TO MEEEEEE************
+// function validateTitleInput() {
+//   if (titleInput.value.length <= 25) {
+//     enableSaveButton();
+//   } else {
+//     alert("Title must be 25 characters or less");
+//   }
+// }
+//
+// function validateBodyInput() {
+//   if (bodyInput.value.length <= 50) {
+//     enableSaveButton();
+//   } else {
+//     alert("Body must be 50 characters or less");
+//   }
+// }
 
 // function to disable/enable Save Button
 
-function enableSaveButton(title1, body1) {
-  for(var i = 0; i < inputFields.length; i++) {
-    if (inputFields[i].value === "") {
-      saveButton.disabled = true;
-    } else {
-      saveButton.disabled = false;
-      saveButton.style.backgroundColor = "#363667";
-    }
+function enableSaveButton(title, body) {
+  if (titleInput.value === "") {
+    saveButton.disabled = true;
+    return
   }
+  if (bodyInput.value === "") {
+    saveButton.disabled = true;
+    return
+  }
+  else {
+    saveButton.disabled = false;
+    saveButton.style.backgroundColor = "#363667"
+  }
+}
+
+function disableSaveButton() {
+  saveButton.style.backgroundColor= "#E7E7FF";
+  saveButton.disabled = true;
 }

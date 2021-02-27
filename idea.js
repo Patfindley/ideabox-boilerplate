@@ -6,7 +6,7 @@ var inputFields = document.querySelectorAll(".user-input")
 
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
-
+var favoriteButton = document.getElementsByClassName("favorite-button");
 var customCard = document.querySelector(".custom-card");
 
 var ideaGrid = document.querySelector(".idea-grid");
@@ -24,6 +24,7 @@ saveButton.addEventListener("click", function(event) {
   saveToStorage(event);
 });
 
+
 for(const inputField of inputFields) {
 inputField.addEventListener("input", function() {
   enableSaveButton();
@@ -32,7 +33,9 @@ inputField.addEventListener("input", function() {
 
 ideaGrid.addEventListener("click", function(event) {
   deleteFromStorage(event);
+  addFavorite(event);
 });
+
 
 
 // class constructor
@@ -49,12 +52,13 @@ class Idea {
 
 // functions
 
-function saveToStorage(event) {
+function saveToStorage() {
   event.preventDefault();
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
   updateMiniCard();
   clearInput();
+  disableSaveButton()
 }
 
 // function to splice out card element from customCards array
@@ -76,31 +80,51 @@ function clearInput() {
 
 // Input shit that we may not need
 
-function validateTitleInput() {
-  if (titleInput.value.length <= 25) {
-    enableSaveButton();
-  } else {
-    alert("Title must be 25 characters or less");
-  }
-}
 
-function validateBodyInput() {
-  if (bodyInput.value.length <= 50) {
-    enableSaveButton();
-  } else {
-    alert("Body must be 50 characters or less");
-  }
-}
+//**********COME BACK TO MEEEEEE************
+// function validateTitleInput() {
+//   if (titleInput.value.length <= 25) {
+//     enableSaveButton();
+//   } else {
+//     alert("Title must be 25 characters or less");
+//   }
+// }
+//
+// function validateBodyInput() {
+//   if (bodyInput.value.length <= 50) {
+//     enableSaveButton();
+//   } else {
+//     alert("Body must be 50 characters or less");
+//   }
+// }
 
 // function to disable/enable Save Button
 
-function enableSaveButton(title1, body1) {
-  for(var i = 0; i < inputFields.length; i++) {
-    if (inputFields[i].value === "") {
-      saveButton.disabled = true;
-    } else {
-      saveButton.disabled = false;
-      saveButton.style.backgroundColor = "#363667";
-    }
+function enableSaveButton() {
+  if (titleInput.value === "" && bodyInput.value === "") {
+    saveButton.disabled = true;
+    return;
+  }
+  if (bodyInput.value === "") {
+    saveButton.disabled = true;
+    return;
+  }
+  else {
+    saveButton.disabled = false;
+    saveButton.style.backgroundColor = "#363667";
+    saveButton.style.cursor = "auto";
   }
 }
+
+function disableSaveButton() {
+  saveButton.style.backgroundColor= "#E7E7FF";
+  saveButton.disabled = true;
+  saveButton.style.cursor = "not-allowed";
+}
+
+function addFavorite(e) {
+  if (e.target.classList.contains("favorite-button")) {
+    favoriteButton.style.background = "none"
+    favoriteButton.classList.toggle(".filled-star")
+  }
+};

@@ -51,24 +51,6 @@ function saveToArray() {
   disableSaveButton()
 }
 
-// function saveToStorage() {
-//   var stringCards =[];
-//   stringCards.push(JSON.stringify(savedCards));
-//   localStorage.setItem("ideas", stringCards);
-// }
-
-// function to splice out card element from customCards array
-
-// function deleteFromStorage(e) {
-//   var storage = window.localStorage
-//   if (e.target.classList.contains("remove-button")) {
-//     var index = e.target.closest("div").id;
-//     savedCards.splice(index, 1);
-//     storage.clear();
-//     saveToStorage();
-//     updateCardDisplay();
-//   }
-// };
 
 function removeCard(e) {
   if (e.target.classList.contains("remove-button")) {
@@ -90,26 +72,6 @@ function clearInput() {
   titleInput.value = "";
   bodyInput.value = "";
 }
-
-// Input shit that we may not need
-
-
-//**********COME BACK TO MEEEEEE************
-// function validateTitleInput() {
-//   if (titleInput.value.length <= 25) {
-//     enableSaveButton();
-//   } else {
-//     alert("Title must be 25 characters or less");
-//   }
-// }
-//
-// function validateBodyInput() {
-//   if (bodyInput.value.length <= 50) {
-//     enableSaveButton();
-//   } else {
-//     alert("Body must be 50 characters or less");
-//   }
-// }
 
 // function to disable/enable Save Button
 
@@ -136,11 +98,28 @@ function disableSaveButton() {
 }
 
 function addFavorite(e) {
+  var cardId = parseInt(e.target.closest("div").id)
   if (e.target.classList.contains("favorite-button")) {
     e.target.classList.toggle("filled-star");
-    this.isStarred = true;
+    for (var i = 0; i < savedCards.length; i++) {
+      if (savedCards[i].id === cardId) {
+        savedCards[i].isStarred = true;
+      }
+    }
   }
 }
+
+// if (e.target.classList.contains("favorite-button")) {
+//   var cardId = parseInt(e.target.closest("div").id);
+//   for (var i = 0; i < savedCards.length; i++) {
+//     if (savedCards[i].id === cardId) {
+//       savedCards[i].isStarred = true;
+//     }
+//   }
+// }
+// }
+
+
 
 function updateCardDisplay() {
   customCard.classList.remove("hidden");
@@ -189,3 +168,52 @@ function parseIdeas() {
     `
   }
 }
+
+
+// function saveToArray() {
+//   event.preventDefault();
+//   currentCard = new Idea(titleInput.value, bodyInput.value);
+//   currentCard.saveToStorage()
+//   updateCardDisplay();
+//   clearInput();
+//   disableSaveButton()
+// }
+
+
+
+// function saveToStorage() {
+  //   var stringCards =[];
+  //   stringCards.push(JSON.stringify(savedCards));
+  //   localStorage.setItem("ideas", stringCards);
+  // }
+
+  // function to splice out card element from customCards array
+
+  // function deleteFromStorage(e) {
+    //   var storage = window.localStorage
+    //   if (e.target.classList.contains("remove-button")) {
+      //     var index = e.target.closest("div").id;
+      //     savedCards.splice(index, 1);
+      //     storage.clear();
+      //     saveToStorage();
+      //     updateCardDisplay();
+      //   }
+      // };
+
+
+      //**********COME BACK TO MEEEEEE************
+      // function validateTitleInput() {
+      //   if (titleInput.value.length <= 25) {
+      //     enableSaveButton();
+      //   } else {
+      //     alert("Title must be 25 characters or less");
+      //   }
+      // }
+      //
+      // function validateBodyInput() {
+      //   if (bodyInput.value.length <= 50) {
+      //     enableSaveButton();
+      //   } else {
+      //     alert("Body must be 50 characters or less");
+      //   }
+      // }

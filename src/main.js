@@ -8,7 +8,7 @@ var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
 var favoriteButton = document.getElementById("favoriteButton");
 var customCard = document.querySelector(".custom-card");
-
+var showStarredButton = document.getElementById("showStarredButton");
 var ideaGrid = document.querySelector(".idea-grid");
 // global variables
 
@@ -23,6 +23,10 @@ saveButton.disabled = true;
 
 saveButton.addEventListener("click", function(event) {
   saveToArray(event);
+});
+
+showStarredButton.addEventListener("click", function(event) {
+  showStarred(event);
 });
 
 
@@ -151,6 +155,29 @@ function renderHTML() {
   }
 }
 
+function showStarred() {
+  var status;
+  for (var i = 0; i < savedCards.length; i++) {
+    if (savedCards[i].isStarred) {
+      ideaGrid.innerHTML += `
+        <div class="custom-card" id="${savedCards[i].id}">
+          <nav>
+            <button class="${status}"></button>
+            <button class="remove-button" id="removeButton"></button>
+          </nav>
+          <div class="card-body">
+            <h2>${savedCards[i].title}</h2>
+            <p>${savedCards[i].body} </p>
+          </div>
+          <footer>
+            <button class="comment-button"></button>
+            <label class="comment-label">Comment</label>
+          </footer>
+        </div>
+      `
+    }
+  }
+}
 
 // function saveToArray() {
 //   event.preventDefault();

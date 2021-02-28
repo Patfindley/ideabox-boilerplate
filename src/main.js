@@ -112,24 +112,20 @@ function addFavorite(e) {
   localStorage.setItem("ideas", JSON.stringify(savedCards));
 }
 
-// if (e.target.classList.contains("favorite-button")) {
-//   var cardId = parseInt(e.target.closest("div").id);
-//   for (var i = 0; i < savedCards.length; i++) {
-//     if (savedCards[i].id === cardId) {
-//       savedCards[i].isStarred = true;
-//     }
-//   }
-// }
-// }
-
-
-
 function updateCardDisplay() {
   customCard.classList.remove("hidden");
   ideaGrid.innerHTML = "";
-    // var retrievedArray = localStorage.getItem("ideas");
-    // var customCards = JSON.parse(retrievedArray);
-    var status;
+  renderHTML();
+}
+
+function parseIdeas() {
+  var retrievedArray = localStorage.getItem("ideas");
+  savedCards = JSON.parse(retrievedArray);
+  renderHTML();
+}
+
+function renderHTML() {
+  var status;
   for (var i = 0; i < savedCards.length; i++) {
     if (savedCards[i].isStarred) {
       status = "filled-star"
@@ -145,29 +141,6 @@ function updateCardDisplay() {
         <div class="card-body">
           <h2>${savedCards[i].title}</h2>
           <p>${savedCards[i].body} </p>
-        </div>
-        <footer>
-          <button class="comment-button"></button>
-          <label class="comment-label">Comment</label>
-        </footer>
-      </div>
-    `
-  }
-}
-
-function parseIdeas() {
-  var retrievedArray = localStorage.getItem("ideas");
-  parsedCards = JSON.parse(retrievedArray);
-  for (var i = 0; i < parsedCards.length; i++) {
-    ideaGrid.innerHTML += `
-      <div class="custom-card" id="${parsedCards[i].id}">
-        <nav>
-          <button class="favorite-button"></button>
-          <button class="remove-button" id="removeButton"></button>
-        </nav>
-        <div class="card-body">
-          <h2>${parsedCards[i].title}</h2>
-          <p>${parsedCards[i].body} </p>
         </div>
         <footer>
           <button class="comment-button"></button>

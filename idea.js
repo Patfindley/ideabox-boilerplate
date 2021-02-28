@@ -36,6 +36,7 @@ ideaGrid.addEventListener("click", function(event) {
   addFavorite(event);
 });
 
+window.addEventListener("DOMContentLoaded", updateCardDisplay);
 
 // class constructor
 

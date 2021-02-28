@@ -21,7 +21,7 @@ saveButton.disabled = true;
 // event listeners
 
 saveButton.addEventListener("click", function(event) {
-  saveToStorage(event);
+  saveToArray(event);
 });
 
 
@@ -51,32 +51,30 @@ class Idea {
 
 // functions
 
-function saveToStorage() {
+function saveToArray() {
   event.preventDefault();
   currentCard = new Idea(titleInput.value, bodyInput.value);
   customCards.push(currentCard);
-  updateMiniCard();
+  saveToStorage();
+  updateCardDisplay();
   clearInput();
   disableSaveButton()
 }
 
-// for (var i = 0; i < customCards.length; i++) {
-//   localStorage.setItem(`ideas`, JSON.stringify(customCards[i]));
-// }
-
-// PSEUDO:
-/*
-
-
-*/
+function saveToStorage() {
+  var stringCards =[];
+  stringCards.push(JSON.stringify(customCards));
+  localStorage.setItem("ideas", stringCards);
+}
 
 // function to splice out card element from customCards array
 
 function deleteFromStorage(e) {
   if (e.target.classList.contains("remove-button")) {
     var index = e.target.closest("div").id;
-    customCards.splice(index, 1);
-    updateMiniCard();
+    localStorage.removeItem(this.id);
+    // customCards.splice(index, 1);
+    updateCardDisplay();
   }
 };
 

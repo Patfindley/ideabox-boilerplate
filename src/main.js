@@ -98,6 +98,7 @@ function disableSaveButton() {
 }
 
 function addFavorite(e) {
+  var storage = window.localStorage;
   var cardId = parseInt(e.target.closest("div").id)
   if (e.target.classList.contains("favorite-button")) {
     e.target.classList.toggle("filled-star");
@@ -107,6 +108,8 @@ function addFavorite(e) {
       }
     }
   }
+  storage.clear();
+  localStorage.setItem("ideas", JSON.stringify(savedCards));
 }
 
 // if (e.target.classList.contains("favorite-button")) {
@@ -126,11 +129,17 @@ function updateCardDisplay() {
   ideaGrid.innerHTML = "";
     // var retrievedArray = localStorage.getItem("ideas");
     // var customCards = JSON.parse(retrievedArray);
+    var status;
   for (var i = 0; i < savedCards.length; i++) {
+    if (savedCards[i].isStarred) {
+      status = "filled-star"
+    } else {
+      status = "favorite-button"
+    }
     ideaGrid.innerHTML += `
       <div class="custom-card" id="${savedCards[i].id}">
         <nav>
-          <button class="favorite-button"></button>
+          <button class="${status}"></button>
           <button class="remove-button" id="removeButton"></button>
         </nav>
         <div class="card-body">

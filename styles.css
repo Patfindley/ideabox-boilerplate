@@ -80,6 +80,33 @@ section {
   align-items: center;
 }
 
+label {
+  margin-top: 1em;
+}
+
+.user-input {
+  margin-top: .5em;
+  border: .2em solid #5356A4;
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-around;
+  height: 2.5em;
+}
+
+.body-input {
+  height: 5em;
+}
+
+.save-button {
+  margin-top: 1em;
+  background-color: #E7E7FF;
+  color: #FFFFFF;
+  font-size: 16px;
+  border: .2em solid #5356A4;
+  height: 2.5em;
+  cursor: not-allowed;
+}
+
 .custom-form {
   background-color: #A9AAD2;
   color: #1F1F3D;
@@ -90,29 +117,11 @@ section {
   justify-content: flex-start;
 };
 
-.user-input {
-  margin-top: 2em;
-  border: 2em solid #1F1F3D;
-  display: flex;
-  justify-content: space-around;
-}
-
-.save-button {
-    margin-top: 2em;
-    background-color: #E7E7FF;
-    color: #FFFFFF;
-    font-size: 16px;
-    border: 0;
-    height: 2.5em;
-    cursor: not-allowed;
-}
-
 /* ****** SEARCH IDEAS ******  */
 
-
-span {
-  margin-top: 2em;
-  border: 5px;
+.search-ideas {
+  margin-top: 1em;
+  border: .2em solid #5356A4;
   border-color: #363667;
   height: 2.5em;
   width: 100%;

@@ -72,10 +72,12 @@ function saveToStorage() {
 // function to splice out card element from customCards array
 
 function deleteFromStorage(e) {
+  var storage = window.localStorage
   if (e.target.classList.contains("remove-button")) {
     var index = e.target.closest("div").id;
-    localStorage.removeItem(this.id);
     customCards.splice(index, 1);
+    storage.clear();
+    saveToStorage();
     updateCardDisplay();
   }
 };

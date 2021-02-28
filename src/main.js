@@ -3,8 +3,8 @@
 function updateCardDisplay() {
   customCard.classList.remove("hidden");
   ideaGrid.innerHTML = "";
-    var retrievedArray = localStorage.getItem("ideas");
-    var customCards = JSON.parse(retrievedArray);
+    // var retrievedArray = localStorage.getItem("ideas");
+    // var customCards = JSON.parse(retrievedArray);
   for (var i = 0; i < customCards.length; i++) {
     ideaGrid.innerHTML += `
       <div class="custom-card">

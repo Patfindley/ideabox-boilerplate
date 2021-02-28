@@ -13,6 +13,7 @@ var ideaGrid = document.querySelector(".idea-grid");
 // global variables
 
 var customCards = [];
+var parsedCards = [];
 var currentCard;
 
 saveButton.disabled = true;
@@ -36,7 +37,7 @@ ideaGrid.addEventListener("click", function(event) {
   addFavorite(event);
 });
 
-window.addEventListener("DOMContentLoaded", updateCardDisplay);
+window.addEventListener("DOMContentLoaded", parseIdeas);
 
 // class constructor
 
@@ -74,7 +75,7 @@ function deleteFromStorage(e) {
   if (e.target.classList.contains("remove-button")) {
     var index = e.target.closest("div").id;
     localStorage.removeItem(this.id);
-    // customCards.splice(index, 1);
+    customCards.splice(index, 1);
     updateCardDisplay();
   }
 };
@@ -133,5 +134,29 @@ function disableSaveButton() {
 function addFavorite(e) {
   if (e.target.classList.contains("favorite-button")) {
     e.target.classList.toggle("filled-star");
+  }
+}
+
+
+function parseIdeas() {
+  var retrievedArray = localStorage.getItem("ideas");
+  parsedCards = JSON.parse(retrievedArray);
+  for (var i = 0; i < parsedCards.length; i++) {
+    ideaGrid.innerHTML += `
+      <div class="custom-card">
+        <nav>
+          <button class="favorite-button"></button>
+          <button class="remove-button" id="removeButton"></button>
+        </nav>
+        <div class="card-body">
+          <h2>${parsedCards[i].title}</h2>
+          <p>${parsedCards[i].body} </p>
+        </div>
+        <footer>
+          <button class="comment-button"></button>
+          <label class="comment-label">Comment</label>
+        </footer>
+      </div>
+    `
   }
 }

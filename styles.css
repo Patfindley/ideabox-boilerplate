@@ -23,7 +23,7 @@ aside {
   align-items: flex-start;
   flex-direction: column;
   width: 18em;
-  height: 58em;
+  height: 100%;
   position: fixed;
 }
 

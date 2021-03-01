@@ -11,8 +11,6 @@ var customCard = document.querySelector(".custom-card");
 
 var showStarredButton = document.getElementById("showStarredButton");
 
-var searchInput = document.getElementById("searchInput");
-
 var ideaGrid = document.querySelector(".idea-grid");
 
 // global variables
@@ -26,14 +24,12 @@ saveButton.disabled = true;
 
 // event listeners
 
-window.addEventListener("DOMContentLoaded", parseIdeas);
-
 saveButton.addEventListener("click", function(event) {
   saveToArray(event);
 });
 
 showStarredButton.addEventListener("click", function(event) {
-  toggleShowStarred();
+  toggleshowStarred();
 });
 
 
@@ -48,18 +44,10 @@ ideaGrid.addEventListener("click", function(event) {
   addFavorite(event);
 });
 
-searchInput.addEventListener("input", filterIdeas);
+window.addEventListener("DOMContentLoaded", parseIdeas);
+
 
 // functions
-
-// create for loop to iterate through savedCards array and if title/body includes search input value,
-// repopulate DOM with those cards
-
-function filterIdeas() {
-  if (searchInput) {
-    console.log("INPUT!!");
-  }
-}
 
 function saveToArray() {
   event.preventDefault();
@@ -76,7 +64,6 @@ function removeCard(e) {
     for (var i = 0; i < savedCards.length; i++) {
       if (savedCards[i].id === cardId) {
         savedCards[i].deleteFromStorage(i);
-        // savedCards.splice(i, 1);
       }
     }
   updateCardDisplay();
@@ -180,9 +167,9 @@ function renderHTML() {
             </div>
             `
     }
-}
+};
 
-function toggleShowStarred() {
+function toggleshowStarred() {
   if (showStarredButton.innerText === "Show All Ideas") {
     renderHTML()
     showStarredButton.innerText = "Show Starred Ideas";
@@ -190,11 +177,6 @@ function toggleShowStarred() {
     showStarred();
   }
   };
-  // var showStarredPage = false;
-  // if (showStarredPage === false || showStarredPage === true) {
-  //   showStarredPage = !showStarredPage
-  // }
-
 
 function showStarred() {
   console.log("i work!");
@@ -222,9 +204,7 @@ function showStarred() {
       `
     }
   }
-}
-
-
+};
 
 // function saveToArray() {
 //   event.preventDefault();

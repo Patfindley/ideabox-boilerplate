@@ -96,6 +96,7 @@ section {
   display: flex;
   align-items: center;
 }
+/* ****** USER INPUTS ******  */
 label {
   margin-top: 1em;
   font-weight: bold;
@@ -129,12 +130,11 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-};
-/* ****** CUSTOM FORM INPUTS ******  */
+}
 .idea-box {
   width: 100%;
-};
-/* ****** MINI CUSTOM CARD ******  */
+}
+/* ****** CUSTOM CARD ******  */
 .title {
   margin-left: 1em;
   font-weight: bold;
@@ -203,6 +203,7 @@ footer {
   height: 2em;
   border-top: 1px #1f1f3d solid;
 }
+/* ****** COMMENTS ******  */
 .comment-button {
   background: url(assets/comment.svg);
   background-repeat: no-repeat;
@@ -217,6 +218,7 @@ footer {
     height: 2.5em;
   border: 0;
 }
+/* ****** ADDITIONAL FEATURES ******  */
 .hidden {
   display: none!important;
 }

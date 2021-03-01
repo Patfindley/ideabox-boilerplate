@@ -8,8 +8,11 @@ var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
 var favoriteButton = document.getElementById("favoriteButton");
 var customCard = document.querySelector(".custom-card");
+
 //var showStarredButton = document.getElementById("showStarredButton");
+
 var ideaGrid = document.querySelector(".idea-grid");
+
 // global variables
 
 var savedCards = [];
@@ -55,19 +58,17 @@ function saveToArray() {
   disableSaveButton()
 }
 
-
 function removeCard(e) {
   if (e.target.classList.contains("remove-button")) {
     var cardId = parseInt(e.target.closest("div").id);
     for (var i = 0; i < savedCards.length; i++) {
       if (savedCards[i].id === cardId) {
-        savedCards[i].deleteFromStorage(cardId);
-        savedCards.splice(i, 1);
+        savedCards[i].deleteFromStorage(i);
+        // savedCards.splice(i, 1);
       }
     }
-
   updateCardDisplay();
-}
+  }
 }
 
 // function to clear input fields
@@ -121,7 +122,7 @@ function addFavorite(e) {
 
 function updateCardDisplay() {
   customCard.classList.remove("hidden");
-  ideaGrid.innerHTML = "";
+  // ideaGrid.innerHTML = "";
   renderHTML();
 }
 
@@ -130,24 +131,23 @@ function parseIdeas() {
   parsedCards = JSON.parse(retrievedArray);
   instantiateStorage();
   renderHTML();
-};
+}
 
 function instantiateStorage() {
-  console.log(parsedCards);
   for (var i = 0; i < parsedCards.length; i++) {
-    console.log("I RAN SO FAR AWAY!");
-    currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].comments);
+    currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
     currentCard.saveToStorage();
   }
   updateCardDisplay();
-};
+}
 
 function renderHTML() {
   var status;
+  ideaGrid.innerHTML = "";
   //if (savedCards.length >= 1) {
     for (var i = 0; i < savedCards.length; i++) {
       if (savedCards[i].isStarred) {
-        status = "filled-star"
+        status = "favorite-button filled-star"
       } else {
         status = "favorite-button"
       }
@@ -167,9 +167,8 @@ function renderHTML() {
             </footer>
             </div>
             `
-        //  }
-        }
-      }
+    }
+}
 
 // function showStarred() {
 //   var status;

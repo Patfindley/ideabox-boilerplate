@@ -60,7 +60,7 @@ h2 {
   margin: 2em 1em 2em 1em;
 }
 
-/* ****** CUSTOM FORM INPUTS ******  */
+/* ****** RIGHT SIDE SECTIONS ******  */
 
 .wrapper {
   background-color: #A9AAD2;
@@ -106,6 +106,8 @@ h2 {
   align-items: center;
 }
 
+/* ****** USER INPUT ******  */
+
 label {
   margin-top: 1em;
   font-weight: bold;
@@ -145,13 +147,13 @@ label {
   justify-content: flex-start;
 };
 
-/* ****** MINI CUSTOM CARD ******  */
-
 .title {
   margin-left: 1em;
   font-weight: bold;
   color: #1F1F3D;
 }
+
+/* ****** RIGHT SIDE SECTIONS ******  */
 
 .idea-grid {
   display: flex;
@@ -161,8 +163,6 @@ label {
   width: 100%;
 }
 
-/* ****** RIGHT SIDE SECTIONS ******  */
-
 .idea-box {
   border: 1px blue solid;
   display: flex;
@@ -170,6 +170,8 @@ label {
   align-items: center;
   background-color: #EAEAF4;
 }
+
+/* ****** CUSTOM CARD ******  */
 
 p {
   margin-left: 1em;
@@ -253,6 +255,8 @@ footer {
     height: 2.5em;
   border: 0;
 }
+
+/* ****** HIDDEN CLASS ******  */
 
 .hidden {
   display: none!important;

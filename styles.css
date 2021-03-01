@@ -23,7 +23,8 @@ aside {
   align-items: flex-start;
   flex-direction: column;
   width: 18em;
-  height: 58em;
+  height: 100%;
+  position: fixed;
 }
 
 h2 {
@@ -61,24 +62,16 @@ h2 {
 
 /* ****** RIGHT SIDE SECTIONS ******  */
 
-section {
-  border: 1px blue solid;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  align-items: center;
-  background-color: #EAEAF4;
-}
-
-/* ****** CUSTOM FORM INPUTS ******  */
-
 .wrapper {
   background-color: #A9AAD2;
   height: 23em;
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.right-side {
+  margin-left: 18em;
 }
 
 /* ****** SEARCH IDEAS ******  */
@@ -112,6 +105,8 @@ section {
   display: flex;
   align-items: center;
 }
+
+/* ****** USER INPUT ******  */
 
 label {
   margin-top: 1em;
@@ -152,30 +147,35 @@ label {
   justify-content: flex-start;
 };
 
-
-/* ****** CUSTOM FORM INPUTS ******  */
-
-.idea-box {
-  width: 100%;
-};
-
-/* ****** MINI CUSTOM CARD ******  */
-
 .title {
   margin-left: 1em;
   font-weight: bold;
   color: #1F1F3D;
 }
 
-.idea-box > .idea-grid {
+/* ****** RIGHT SIDE SECTIONS ******  */
+
+.idea-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* margin: .75em; */
+  margin-top: .75em;
+  width: 100%;
 }
+
+.idea-box {
+  border: 1px blue solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #EAEAF4;
+}
+
+/* ****** CUSTOM CARD ******  */
 
 p {
   margin-left: 1em;
+  overflow-wrap: break-word;
 }
 
 .comment-button {
@@ -186,7 +186,7 @@ p {
   height: 2.5em;
 }
 
-article > .custom-card {
+.custom-card {
   height: 15em;
   width: 12em;
   border: 2px #1F1F3D solid;
@@ -255,6 +255,8 @@ footer {
     height: 2.5em;
   border: 0;
 }
+
+/* ****** HIDDEN CLASS ******  */
 
 .hidden {
   display: none!important;

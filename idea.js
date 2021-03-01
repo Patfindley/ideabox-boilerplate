@@ -22,14 +22,5 @@ class Idea {
 
   updateIdea() {
   }
-  
+
 }
-
-
-// for (var i = 0; i < localStorage.ideas.length; i++) {
-//   var current = JSON.parseInt(localStorage.ideas(i).id);
-//   if (cardId === current) {
-//     localStorage.removeItem("ideas", current);
-//   }
-// }
-// }

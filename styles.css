@@ -1,10 +1,8 @@
 /* ******GLOBAL******** */
-
 html {
   background-color: #A9AAD2;
   height: 100%;
 }
-
 body {
   border: 1px red solid;
   font-family: "Open Sans", light;
@@ -13,9 +11,7 @@ body {
   justify-content: space-between;
   margin: 0;
 }
-
 /* ****** ASIDE SECTION ******  */
-
 aside {
   background-color: #1F1F3d;
   color: #FFFFFF;
@@ -23,16 +19,13 @@ aside {
   align-items: flex-start;
   flex-direction: column;
   width: 18em;
-  height: 100%;
-  position: fixed;
+  height: 58em;
 }
-
 h2 {
   padding-right: 1em;
   padding-left: 1em;
   font-weight: 500;
 }
-
 .starred-ideas-box {
   width: 100%;
   display: flex;
@@ -40,14 +33,12 @@ h2 {
   border-top: 1px #353567 solid;
   border-bottom: 1px #353567 solid;
 }
-
 .filter-starred-ideas {
   font-weight: 600;
   color: #BFBFDD;
   padding-left: 1.5em;
   padding-top: 1.5em;
 }
-
 .show-starred-button {
   font-weight: 600;
   font-size: 18px;
@@ -59,23 +50,25 @@ h2 {
   padding: 1em 3em;
   margin: 2em 1em 2em 1em;
 }
-
 /* ****** RIGHT SIDE SECTIONS ******  */
-
+section {
+  border: 1px blue solid;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  background-color: #EAEAF4;
+}
+/* ****** CUSTOM FORM INPUTS ******  */
 .wrapper {
   background-color: #A9AAD2;
   height: 23em;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-.right-side {
-  margin-left: 18em;
-}
-
 /* ****** SEARCH IDEAS ******  */
-
 .search-button {
   background: url(assets/search.svg);
   background-position: center;
@@ -87,14 +80,12 @@ h2 {
   width: 3.05em;
   height: 3.05em;
 }
-
 .search-input {
   height: 2.85em;
   width: 100%;
   height: 96%;
   border: 0;
 }
-
 .search-ideas {
   margin-top: 1em;
   border: .15em solid #5356A4;
@@ -105,14 +96,10 @@ h2 {
   display: flex;
   align-items: center;
 }
-
-/* ****** USER INPUT ******  */
-
 label {
   margin-top: 1em;
   font-weight: bold;
 }
-
 .user-input {
   margin-top: .5em;
   border: .2em solid #5356A4;
@@ -121,11 +108,9 @@ label {
   justify-content: space-around;
   height: 2.5em;
 }
-
 .body-input {
   height: 5em;
 }
-
 .save-button {
   margin-top: 1em;
   background-color: #E7E7FF;
@@ -136,7 +121,6 @@ label {
   height: 2.5em;
   cursor: not-allowed;
 }
-
 .custom-form {
   background-color: #A9AAD2;
   color: #1F1F3D;
@@ -146,38 +130,25 @@ label {
   flex-direction: column;
   justify-content: flex-start;
 };
-
+/* ****** CUSTOM FORM INPUTS ******  */
+.idea-box {
+  width: 100%;
+};
+/* ****** MINI CUSTOM CARD ******  */
 .title {
   margin-left: 1em;
   font-weight: bold;
   color: #1F1F3D;
 }
-
-/* ****** RIGHT SIDE SECTIONS ******  */
-
-.idea-grid {
+.idea-box > .idea-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: .75em;
-  width: 100%;
+  /* margin: .75em; */
 }
-
-.idea-box {
-  border: 1px blue solid;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #EAEAF4;
-}
-
-/* ****** CUSTOM CARD ******  */
-
 p {
   margin-left: 1em;
-  overflow-wrap: break-word;
 }
-
 .comment-button {
   background-color: #5356A5;
   color: #FFFFFF;
@@ -185,8 +156,7 @@ p {
   width: 100%;
   height: 2.5em;
 }
-
-.custom-card {
+article > .custom-card {
   height: 15em;
   width: 12em;
   border: 2px #1F1F3D solid;
@@ -195,7 +165,6 @@ p {
   flex-direction: column;
   justify-content: space-between;
 }
-
 nav {
   background-color: #1F1F3D;
   display: flex;
@@ -203,7 +172,6 @@ nav {
   align-items: stretch;
   height: 2em;
 }
-
 .favorite-button {
   background: url(assets/star.svg);
   background-repeat: no-repeat;
@@ -211,7 +179,6 @@ nav {
   width: 18%;
   display: inline;
 }
-
 .filled-star {
   background: url(assets/star-active.svg);
   background-repeat: no-repeat;
@@ -219,18 +186,15 @@ nav {
   width: 18%;
   display: inline;
 }
-
 .filler {
   width: 66%
 }
-
 .remove-button {
   background: url(assets/delete.svg);
   background-repeat: no-repeat;
   border: none;
   width: 18%;
 }
-
 footer {
   background-color: #5356A4;
   display: flex;
@@ -239,14 +203,12 @@ footer {
   height: 2em;
   border-top: 1px #1f1f3d solid;
 }
-
 .comment-button {
   background: url(assets/comment.svg);
   background-repeat: no-repeat;
   width: 18%;
   border: 0;
 }
-
 .comment-label {
     color: #E9E9F3;
     font-weight: bold;
@@ -255,9 +217,6 @@ footer {
     height: 2.5em;
   border: 0;
 }
-
-/* ****** HIDDEN CLASS ******  */
-
 .hidden {
   display: none!important;
 }

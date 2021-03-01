@@ -1,29 +1,22 @@
 // target variables
-
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
-var inputFields = document.querySelectorAll(".user-input")
-
+var inputFields = document.querySelectorAll(".user-input");
 var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
 var favoriteButton = document.getElementById("favoriteButton");
 var customCard = document.querySelector(".custom-card");
-
 var showStarredButton = document.getElementById("showStarredButton");
-
 var ideaGrid = document.querySelector(".idea-grid");
 
 // global variables
-
 var savedCards = [];
 var parsedCards = [];
 var currentCard;
 
 saveButton.disabled = true;
 
-
 // event listeners
-
 saveButton.addEventListener("click", function(event) {
   saveToArray(event);
 });
@@ -32,12 +25,10 @@ showStarredButton.addEventListener("click", function(event) {
   toggleshowStarred();
 });
 
-
 for(const inputField of inputFields) {
 inputField.addEventListener("input", function() {
   enableSaveButton();
 })};
-
 
 ideaGrid.addEventListener("click", function(event) {
   removeCard(event);
@@ -45,7 +36,6 @@ ideaGrid.addEventListener("click", function(event) {
 });
 
 window.addEventListener("DOMContentLoaded", parseIdeas);
-
 
 // functions
 
@@ -205,40 +195,3 @@ function showStarred() {
     }
   }
 };
-
-// function saveToStorage() {
-  //   var stringCards =[];
-  //   stringCards.push(JSON.stringify(savedCards));
-  //   localStorage.setItem("ideas", stringCards);
-  // }
-
-  // function to splice out card element from customCards array
-
-  // function deleteFromStorage(e) {
-    //   var storage = window.localStorage
-    //   if (e.target.classList.contains("remove-button")) {
-      //     var index = e.target.closest("div").id;
-      //     savedCards.splice(index, 1);
-      //     storage.clear();
-      //     saveToStorage();
-      //     updateCardDisplay();
-      //   }
-      // };
-
-
-      //**********COME BACK TO MEEEEEE************
-      // function validateTitleInput() {
-      //   if (titleInput.value.length <= 25) {
-      //     enableSaveButton();
-      //   } else {
-      //     alert("Title must be 25 characters or less");
-      //   }
-      // }
-      //
-      // function validateBodyInput() {
-      //   if (bodyInput.value.length <= 50) {
-      //     enableSaveButton();
-      //   } else {
-      //     alert("Body must be 50 characters or less");
-      //   }
-      // }

@@ -44,8 +44,35 @@ searchInput.addEventListener("input", filterSearch);
 // functions
 
 function filterSearch() {
-  if (searchInput) {
-
+  var status;
+  ideaGrid.innerHTML = "";
+  for (var i = 0; i < savedCards.length; i++) {
+    if (savedCards[i].isStarred) {
+      status = "favorite-button filled-star"
+    } else {
+      status = "favorite-button"
+    }
+    if (searchInput.value.includes(savedCards[i].title) || searchInput.value.includes(savedCards[i].body)) {
+      ideaGrid.innerHTML += `
+        <div class="custom-card" id="${savedCards[i].id}">
+          <nav>
+            <button class="${status}"></button>
+            <button class="remove-button" id="removeButton"></button>
+          </nav>
+          <div class="card-body">
+            <h2>${savedCards[i].title}</h2>
+            <p>${savedCards[i].body} </p>
+          </div>
+          <footer>
+            <button class="comment-button"></button>
+            <label class="comment-label">Comment</label>
+          </footer>
+        </div>
+      `
+    }
+    if (searchInput.value === "") {
+      renderHTML();
+    }
   }
 }
 
@@ -179,7 +206,6 @@ function toggleShowStarred() {
   };
 
 function showStarred() {
-  console.log("i work!");
   var status;
   ideaGrid.innerHTML = "";
   for (var i = 0; i < savedCards.length; i++) {

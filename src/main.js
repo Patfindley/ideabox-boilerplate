@@ -11,6 +11,8 @@ var customCard = document.querySelector(".custom-card");
 
 var showStarredButton = document.getElementById("showStarredButton");
 
+var searchInput = document.getElementById("searchInput");
+
 var ideaGrid = document.querySelector(".idea-grid");
 
 // global variables
@@ -24,12 +26,14 @@ saveButton.disabled = true;
 
 // event listeners
 
+window.addEventListener("DOMContentLoaded", parseIdeas);
+
 saveButton.addEventListener("click", function(event) {
   saveToArray(event);
 });
 
 showStarredButton.addEventListener("click", function(event) {
-  toggleshowStarred();
+  toggleShowStarred();
 });
 
 
@@ -44,10 +48,18 @@ ideaGrid.addEventListener("click", function(event) {
   addFavorite(event);
 });
 
-window.addEventListener("DOMContentLoaded", parseIdeas);
-
+searchInput.addEventListener("input", filterIdeas);
 
 // functions
+
+// create for loop to iterate through savedCards array and if title/body includes search input value,
+// repopulate DOM with those cards
+
+function filterIdeas() {
+  if (searchInput) {
+    console.log("INPUT!!");
+  }
+}
 
 function saveToArray() {
   event.preventDefault();
@@ -170,7 +182,7 @@ function renderHTML() {
     }
 }
 
-function toggleshowStarred() {
+function toggleShowStarred() {
   if (showStarredButton.innerText === "Show All Ideas") {
     renderHTML()
     showStarredButton.innerText = "Show Starred Ideas";
@@ -211,6 +223,8 @@ function showStarred() {
     }
   }
 }
+
+
 
 // function saveToArray() {
 //   event.preventDefault();

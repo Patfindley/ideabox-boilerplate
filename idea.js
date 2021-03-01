@@ -1,6 +1,6 @@
 class Idea {
-  constructor(title, body, isStarred) {
-    this.id = Date.now();
+  constructor(title, body, isStarred, id) {
+    this.id = id || Date.now();
     this.title = title;
     this.body = body;
     this.isStarred = isStarred || false;
@@ -12,15 +12,16 @@ class Idea {
     localStorage.setItem("ideas", JSON.stringify(savedCards));
   }
 
-  deleteFromStorage(index) {
-    savedCards.splice(index, 1);
+  deleteFromStorage(i) {
     var storage = window.localStorage;
+    savedCards.splice(i, 1);
     storage.clear();
     localStorage.setItem("ideas", JSON.stringify(savedCards));
     updateCardDisplay();
   }
 
   updateIdea() {
+
   }
 
 }

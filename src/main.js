@@ -127,11 +127,13 @@ function updateCardDisplay() {
 }
 
 function parseIdeas() {
-  var retrievedArray = localStorage.getItem("ideas");
-  parsedCards = JSON.parse(retrievedArray);
-  instantiateStorage();
-  renderHTML();
-}
+  if (localStorage.length > 0) {
+    var retrievedArray = localStorage.getItem("ideas");
+    parsedCards = JSON.parse(retrievedArray);
+    instantiateStorage();
+    renderHTML();
+  }
+};
 
 function instantiateStorage() {
   for (var i = 0; i < parsedCards.length; i++) {

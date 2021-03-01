@@ -107,13 +107,16 @@ function addFavorite(e) {
   if (e.target.classList.contains("favorite-button")) {
     e.target.classList.toggle("filled-star");
     for (var i = 0; i < savedCards.length; i++) {
-      if (savedCards[i].id === cardId) {
+      if (savedCards[i].id === cardId && !savedCards[i].isStarred) {
         savedCards[i].isStarred = true;
       }
+      else if (savedCards[i].id === cardId && savedCards[i].isStarred) {
+        savedCards[i].isStarred = false;
+      }
     }
-  }
   storage.clear();
   localStorage.setItem("ideas", JSON.stringify(savedCards));
+  }
 }
 
 function updateCardDisplay() {
@@ -133,7 +136,7 @@ function instantiateStorage() {
   console.log(parsedCards);
   for (var i = 0; i < parsedCards.length; i++) {
     console.log("I RAN SO FAR AWAY!");
-    currentCard = new Idea(parsedCards[i].id, parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].comments);
+    currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].comments);
     currentCard.saveToStorage();
   }
   updateCardDisplay();
@@ -141,7 +144,7 @@ function instantiateStorage() {
 
 function renderHTML() {
   var status;
-  if (savedCards.length >= 1) {
+  //if (savedCards.length >= 1) {
     for (var i = 0; i < savedCards.length; i++) {
       if (savedCards[i].isStarred) {
         status = "filled-star"
@@ -164,7 +167,7 @@ function renderHTML() {
             </footer>
             </div>
             `
-          }
+        //  }
         }
       }
 

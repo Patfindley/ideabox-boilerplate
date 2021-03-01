@@ -8,6 +8,7 @@ var favoriteButton = document.getElementById("favoriteButton");
 var customCard = document.querySelector(".custom-card");
 var showStarredButton = document.getElementById("showStarredButton");
 var ideaGrid = document.querySelector(".idea-grid");
+var searchInput = document.getElementById("searchInput");
 
 // global variables
 var savedCards = [];
@@ -17,12 +18,15 @@ var currentCard;
 saveButton.disabled = true;
 
 // event listeners
+
+window.addEventListener("DOMContentLoaded", parseIdeas);
+
 saveButton.addEventListener("click", function(event) {
   saveToArray(event);
 });
 
 showStarredButton.addEventListener("click", function(event) {
-  toggleshowStarred();
+  toggleShowStarred();
 });
 
 for(const inputField of inputFields) {
@@ -35,9 +39,15 @@ ideaGrid.addEventListener("click", function(event) {
   addFavorite(event);
 });
 
-window.addEventListener("DOMContentLoaded", parseIdeas);
+searchInput.addEventListener("input", filterSearch);
 
 // functions
+
+function filterSearch() {
+  if (searchInput) {
+
+  }
+}
 
 function saveToArray() {
   event.preventDefault();
@@ -159,7 +169,7 @@ function renderHTML() {
     }
 };
 
-function toggleshowStarred() {
+function toggleShowStarred() {
   if (showStarredButton.innerText === "Show All Ideas") {
     renderHTML()
     showStarredButton.innerText = "Show Starred Ideas";
@@ -194,4 +204,32 @@ function showStarred() {
       `
     }
   }
+};
+
+function renderHTML() {
+  var status;
+  ideaGrid.innerHTML = "";
+    for (var i = 0; i < savedCards.length; i++) {
+      if (savedCards[i].isStarred) {
+        status = "favorite-button filled-star"
+      } else {
+        status = "favorite-button"
+      }
+      ideaGrid.innerHTML += `
+        <div class="custom-card" id="${savedCards[i].id}">
+          <nav>
+            <button class="${status}"></button>
+            <button class="remove-button" id="removeButton"></button>
+            </nav>
+            <div class="card-body">
+            <h2>${savedCards[i].title}</h2>
+            <p>${savedCards[i].body} </p>
+            </div>
+            <footer>
+            <button class="comment-button"></button>
+            <label class="comment-label">Comment</label>
+            </footer>
+            </div>
+            `
+    }
 };

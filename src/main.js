@@ -206,17 +206,6 @@ function showStarred() {
   }
 };
 
-// function saveToArray() {
-//   event.preventDefault();
-//   currentCard = new Idea(titleInput.value, bodyInput.value);
-//   currentCard.saveToStorage()
-//   updateCardDisplay();
-//   clearInput();
-//   disableSaveButton()
-// }
-
-
-
 // function saveToStorage() {
   //   var stringCards =[];
   //   stringCards.push(JSON.stringify(savedCards));

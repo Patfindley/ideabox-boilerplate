@@ -8,7 +8,7 @@ var saveButton = document.getElementById("saveButton");
 var removeButton = document.getElementById("removeButton");
 var favoriteButton = document.getElementById("favoriteButton");
 var customCard = document.querySelector(".custom-card");
-var showStarredButton = document.getElementById("showStarredButton");
+//var showStarredButton = document.getElementById("showStarredButton");
 var ideaGrid = document.querySelector(".idea-grid");
 // global variables
 
@@ -25,9 +25,9 @@ saveButton.addEventListener("click", function(event) {
   saveToArray(event);
 });
 
-showStarredButton.addEventListener("click", function(event) {
-  showStarred(event);
-});
+// showStarredButton.addEventListener("click", function(event) {
+//   showStarred(event);
+// });
 
 
 for(const inputField of inputFields) {
@@ -124,60 +124,73 @@ function updateCardDisplay() {
 
 function parseIdeas() {
   var retrievedArray = localStorage.getItem("ideas");
-  savedCards = JSON.parse(retrievedArray);
+  parsedCards = JSON.parse(retrievedArray);
+  instantiateStorage();
   renderHTML();
-}
+};
+
+function instantiateStorage() {
+  console.log(parsedCards);
+  for (var i = 0; i < parsedCards.length; i++) {
+    console.log("I RAN SO FAR AWAY!");
+    currentCard = new Idea(parsedCards[i].id, parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].comments);
+    currentCard.saveToStorage();
+  }
+  updateCardDisplay();
+};
 
 function renderHTML() {
   var status;
-  for (var i = 0; i < savedCards.length; i++) {
-    if (savedCards[i].isStarred) {
-      status = "filled-star"
-    } else {
-      status = "favorite-button"
-    }
-    ideaGrid.innerHTML += `
-      <div class="custom-card" id="${savedCards[i].id}">
-        <nav>
-          <button class="${status}"></button>
-          <button class="remove-button" id="removeButton"></button>
-        </nav>
-        <div class="card-body">
-          <h2>${savedCards[i].title}</h2>
-          <p>${savedCards[i].body} </p>
-        </div>
-        <footer>
-          <button class="comment-button"></button>
-          <label class="comment-label">Comment</label>
-        </footer>
-      </div>
-    `
-  }
-}
-
-function showStarred() {
-  var status;
-  for (var i = 0; i < savedCards.length; i++) {
-    if (savedCards[i].isStarred) {
+  if (savedCards.length >= 1) {
+    for (var i = 0; i < savedCards.length; i++) {
+      if (savedCards[i].isStarred) {
+        status = "filled-star"
+      } else {
+        status = "favorite-button"
+      }
       ideaGrid.innerHTML += `
         <div class="custom-card" id="${savedCards[i].id}">
           <nav>
             <button class="${status}"></button>
             <button class="remove-button" id="removeButton"></button>
-          </nav>
-          <div class="card-body">
+            </nav>
+            <div class="card-body">
             <h2>${savedCards[i].title}</h2>
             <p>${savedCards[i].body} </p>
-          </div>
-          <footer>
+            </div>
+            <footer>
             <button class="comment-button"></button>
             <label class="comment-label">Comment</label>
-          </footer>
-        </div>
-      `
-    }
-  }
-}
+            </footer>
+            </div>
+            `
+          }
+        }
+      }
+
+// function showStarred() {
+//   var status;
+//   for (var i = 0; i < savedCards.length; i++) {
+//     if (savedCards[i].isStarred) {
+//       ideaGrid.innerHTML += `
+//         <div class="custom-card" id="${savedCards[i].id}">
+//           <nav>
+//             <button class="${status}"></button>
+//             <button class="remove-button" id="removeButton"></button>
+//           </nav>
+//           <div class="card-body">
+//             <h2>${savedCards[i].title}</h2>
+//             <p>${savedCards[i].body} </p>
+//           </div>
+//           <footer>
+//             <button class="comment-button"></button>
+//             <label class="comment-label">Comment</label>
+//           </footer>
+//         </div>
+//       `
+//     }
+//   }
+// }
 
 // function saveToArray() {
 //   event.preventDefault();

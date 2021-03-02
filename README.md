@@ -1,5 +1,4 @@
 # Ideabox Group Project
-##### a web app to store, organize, and display user-submitted "idea cards"
 
 Every developer has more ideas than time. As David Allen likes to say "the human brain is for creating ideas, not remembering them." In this project, we'll be building an application that records and archives our ideas (good and bad alike).
 
@@ -16,37 +15,31 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/ideabox-group.html)
 
 ## Functionality
+##### a web app to store, organize, and display user-submitted "idea cards"
 
-##### Create & Remove Ideas Cards
+#### Create & Remove Ideas Cards
 - 
 
-##### Add Cards to "Favorites"
+#### Add Cards to "Favorites"
 - 
 
-##### Use "Instant Search" to Filter Cards
+#### Use "Instant Search" to Filter Cards
 - 
 
-##### Web Accessibility
+#### Web Accessibility
 - 
-
-#### Want to contribute?
-- Interested in contributing to Ideabox?
-- Fork this project and clone to your machine.
-- Create a pull request, and one of our project managers will get back to you with a code review!
 
 #### Technologies Used
 - JavaScript
 - HTML
 - CSS
 
-### Additional Tools
+#### Additional Tools
 - 
 
 #### Project Links
-
 - [GitHub Repo] (https://github.com/EllieAzaveda/ideabox-boilerplate)
 - [GitHub Page] (https://ellieazaveda.github.io/ideabox-boilerplate)
-
 
 #### Credits
 ##### Co-Contributors
@@ -60,6 +53,11 @@ The project spec & rubric can be found [here](https://frontend.turing.io/project
 
 ##### Project Manager
 - [👩🏻‍🏫 Hannah Hudson](https://github.com/hannahhch)
+
+### Want to contribute?
+- Interested in contributing to Ideabox?
+- Fork this project and clone to your machine.
+- Create a pull request, and one of our project managers will get back to you with a code review!
 
 **************************************************************************
 

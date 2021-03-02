@@ -15,7 +15,7 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/ideabox-group.html)
 
 ## Functionality
-##### a web app to store, organize, and display user-submitted "idea cards"
+**a web app to store, organize, and display user-submitted "idea cards"**
 
 #### Create & Remove Ideas Cards
 - 

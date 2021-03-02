@@ -17,32 +17,32 @@
     <div class="wrapper">
       <form class="custom-form">
         <label for="titleInput">Title</label>
-        <input class="user-input title-input" id="titleInput"></input>
+        <input class="user-input title-input" id="titleInput" aria-required="true"></input>
         <label for="bodyInput">Body</label>
-        <input class="user-input body-input" id="bodyInput"></input>
-        <button class="save-button" id="saveButton">Save</button>
+        <input class="user-input body-input" id="bodyInput" aria-required="true"></input>
+        <button class="save-button" id="saveButton" aria-label="Save Button">Save</button>
         <span class="search-ideas">
-          <button class="search-button" id="searchButton" value="searchButton"></button>
-          <input class="search-input" id="searchInput" placeholder="Search Ideas"></input>
+          <button class="search-button" id="searchButton" aria-label="Search Button"></button>
+          <input class="search-input" id="searchInput" placeholder="Search Ideas" aria-label="Search Input"></input>
         </span>
       </form>
     </div>
     <section class="idea-box">
       <article class="idea-grid">
       <div class="custom-card hidden">
-        <nav>
-          <button class="favorite-button" id="favoriteButton"></button>
+        <!-- <nav>
+          <button class="favorite-button" id="favoriteButton" aria-label="Favorite Button"></button>
           <span class="filler"></span>
-          <button class="remove-button" id="removeButton"></button>
+          <button class="remove-button" id="removeButton"  aria-label="Remove Button"></button>
         </nav>
         <div class="card-body">
           <h3 class="title">Title</h3>
           <p>stuff and things and stuff and super heroes</p>
         </div>
         <footer>
-          <button class="comment-button"></button>
-          <label class="comment-label">Comment</label>
-        </footer>
+          <button class="comment-button" aria-label="Comment Button"></button>
+          <label class="comment-label" aria-label="Comment">Comment</label>
+        </footer> -->
       </div>
     </article>
     </section>

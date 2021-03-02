@@ -12,6 +12,7 @@ var searchInput = document.getElementById("searchInput");
 
 // global variables
 var savedCards = [];
+var parsedCards = [];
 var currentCard;
 
 saveButton.disabled = true;
@@ -63,17 +64,13 @@ function removeCard(e) {
   }
 }
 
-// function to clear input fields
-
 function clearInput() {
   titleInput.value = "";
   bodyInput.value = "";
 }
 
-// function to disable/enable Save Button
-
 function enableSaveButton() {
-  if (titleInput.value === "" || bodyInput.value === "") {
+  if (titleInput.value === "" && bodyInput.value === "") {
     saveButton.disabled = true;
     return;
   }
@@ -118,61 +115,66 @@ function updateCardDisplay() {
 }
 
 function parseIdeas() {
-  var parsedCards = [];
   if (localStorage.length > 0) {
     var retrievedArray = localStorage.getItem("ideas");
     parsedCards = JSON.parse(retrievedArray);
-    instantiateStorage(parsedCards);
+    instantiateStorage();
     renderHTML();
   }
-};
+}
 
-function instantiateStorage(parsedCards) {
-  if (localStorage.length > 0) {
-    for (var i = 0; i < parsedCards.length; i++) {
-      currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
-      currentCard.saveToStorage();
-    }
+function instantiateStorage() {
+  for (var i = 0; i < parsedCards.length; i++) {
+    currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
+    currentCard.saveToStorage();
   }
   updateCardDisplay();
 }
 
-function renderHTML() {
-  var status;
-  ideaGrid.innerHTML = "";
-    for (var i = 0; i < savedCards.length; i++) {
-      if (savedCards[i].isStarred) {
-        status = "favorite-button filled-star"
-      } else {
-        status = "favorite-button"
-      }
-      ideaGrid.innerHTML += `
-        <div class="custom-card" id="${savedCards[i].id}">
-          <nav>
-            <button class="${status}"></button>
-            <button class="remove-button" id="removeButton"></button>
-            </nav>
-            <div class="card-body">
-            <h2>${savedCards[i].title}</h2>
-            <p>${savedCards[i].body} </p>
-            </div>
-            <footer>
-            <button class="comment-button"></button>
-            <label class="comment-label">Comment</label>
-            </footer>
-            </div>
-            `
-    }
-};
-
 function toggleShowStarred() {
   if (showStarredButton.innerText === "Show All Ideas") {
-    renderHTML()
+    renderHTML();
     showStarredButton.innerText = "Show Starred Ideas";
   } else {
     showStarred();
   }
-  };
+}
+
+function renderHTML() {
+  ideaGrid.innerHTML = "";
+    for (var i = 0; i < savedCards.length; i++) {
+      var status = assignStarValue(i);
+      buildHTML(i, status);
+    }
+}
+
+function assignStarValue(i) {
+  var status;
+  if (savedCards[i].isStarred) {
+    status = "favorite-button filled-star";
+  } else {
+    status = "favorite-button";
+  }
+  return status;
+}
+
+function buildHTML(i, status) {
+  ideaGrid.innerHTML += `
+    <div class="custom-card" id="${savedCards[i].id}">
+      <nav>
+        <button class="${status}" aria-label="Favorite Button"></button>
+        <button class="remove-button" id="removeButton" aria-label="Remove Button"></button>
+      </nav>
+      <div class="card-body">
+        <h2>${savedCards[i].title}</h2>
+        <p>${savedCards[i].body} </p>
+      </div>
+      <footer>
+        <button class="comment-button" aria-label="Comment Button"></button>
+        <label class="comment-label">Comment</label>
+      </footer>
+    </div>`
+}
 
 function showStarred() {
   var status;
@@ -180,54 +182,20 @@ function showStarred() {
   for (var i = 0; i < savedCards.length; i++) {
     if (savedCards[i].isStarred) {
       status = "favorite-button filled-star";
-      showStarredButton.innerText = "Show All Ideas";
-      ideaGrid.innerHTML += `
-        <div class="custom-card" id="${savedCards[i].id}">
-          <nav>
-            <button class="${status}"></button>
-            <button class="remove-button" id="removeButton"></button>
-          </nav>
-          <div class="card-body">
-            <h2>${savedCards[i].title}</h2>
-            <p>${savedCards[i].body} </p>
-          </div>
-          <footer>
-            <button class="comment-button"></button>
-            <label class="comment-label">Comment</label>
-          </footer>
-        </div>
-      `
+      buildHTML(i, status);
     }
   }
-};
+  showStarredButton.innerText = "Show All Ideas";
+}
 
-function filterSearch() {
-  var status;
+  function filterSearch() {
+  // var status;
   ideaGrid.innerHTML = "";
   for (var i = 0; i < savedCards.length; i++) {
-    if (savedCards[i].isStarred) {
-      status = "favorite-button filled-star";
-    } else {
-      status = "favorite-button";
-    }
+    var status = assignStarValue(i);
     if (savedCards[i].title.toLowerCase().includes(searchInput.value.toLowerCase())
-    || savedCards[i].body.toLowerCase().includes(searchInput.value.toLowerCase())) {
-      ideaGrid.innerHTML += `
-        <div class="custom-card" id="${savedCards[i].id}">
-          <nav>
-            <button class="${status}"></button>
-            <button class="remove-button" id="removeButton"></button>
-          </nav>
-          <div class="card-body">
-            <h2>${savedCards[i].title}</h2>
-            <p>${savedCards[i].body} </p>
-          </div>
-          <footer>
-            <button class="comment-button"></button>
-            <label class="comment-label">Comment</label>
-          </footer>
-        </div>
-      `
+      || savedCards[i].body.toLowerCase().includes(searchInput.value.toLowerCase())) {
+      buildHTML(i, status);
     }
     if (searchInput.value === "") {
       renderHTML();

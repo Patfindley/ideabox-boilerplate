@@ -17,3 +17,26 @@ Throughout the project, one of our focuses will be on providing a fluid and resp
 * Craft code with clean style, using small functions that show trends toward DRYness and SRP
 
 The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/ideabox-group.html)
+
+
+#### Why was this project created?
+- 
+
+#### How does this work?
+- 
+
+#### Want to contribute?
+- Interested in contributing to Ideabox?
+- Fork this project and clone to your machine.
+- Create a pull request, and one of our project managers will get back to you with a code review!
+
+#### Technologies Used
+- JavaScript
+- HTML
+- CSS
+
+#### Credits
+##### Co-Contributors
+- [🦥 Peter Muellerleile](https://github.com/pcmueller)
+- [🧚 Ellie Azaveda](https://github.com/EllieAzaveda)
+- [🥔 Pat Findley](https://github.com/Patfindley)

@@ -12,7 +12,6 @@ var searchInput = document.getElementById("searchInput");
 
 // global variables
 var savedCards = [];
-var parsedCards = [];
 var currentCard;
 
 saveButton.disabled = true;
@@ -74,7 +73,7 @@ function clearInput() {
 // function to disable/enable Save Button
 
 function enableSaveButton() {
-  if (titleInput.value === "" && bodyInput.value === "") {
+  if (titleInput.value === "" || bodyInput.value === "") {
     saveButton.disabled = true;
     return;
   }
@@ -119,18 +118,21 @@ function updateCardDisplay() {
 }
 
 function parseIdeas() {
+  var parsedCards = [];
   if (localStorage.length > 0) {
     var retrievedArray = localStorage.getItem("ideas");
     parsedCards = JSON.parse(retrievedArray);
-    instantiateStorage();
+    instantiateStorage(parsedCards);
     renderHTML();
   }
 };
 
-function instantiateStorage() {
-  for (var i = 0; i < parsedCards.length; i++) {
-    currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
-    currentCard.saveToStorage();
+function instantiateStorage(parsedCards) {
+  if (localStorage.length > 0) {
+    for (var i = 0; i < parsedCards.length; i++) {
+      currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
+      currentCard.saveToStorage();
+    }
   }
   updateCardDisplay();
 }

@@ -25,6 +25,7 @@ h2 {
   padding-right: 1em;
   padding-left: 1em;
   font-weight: 500;
+  word-wrap: break-word;
 }
 .starred-ideas-box {
   width: 100%;
@@ -148,6 +149,7 @@ label {
 }
 p {
   margin-left: 1em;
+  word-wrap: break-word;
 }
 .comment-button {
   background-color: #5356A5;

@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title class="project-title">IdeaBox</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-  </head>
-  <body>
-    <aside class="aside-container">
-      <h2 class="aside-title">IdeaBox</h2>
-      <div class="starred-ideas-box">
-        <label class="filter-starred-ideas">Filter Starred Ideas</label>
-        <button class="show-starred-button" id="showStarredButton">Show Starred Ideas</button>
-      </div>
-    </aside>
-    <section class="right-side">
-      <div class="wrapper">
-        <form class="custom-form">
-          <label class="form-label" for="titleInput">Title</label>
-          <input class="user-input title-input" id="titleInput" aria-required="true"></input>
-          <label class="form-label" for="bodyInput">Body</label>
-          <input class="user-input body-input" id="bodyInput" aria-required="true"></input>
-          <button class="save-button" id="saveButton" aria-label="Save Button">Save</button>
-          <span class="search-ideas">
-            <button class="search-button" id="searchButton" aria-label="Search Button"></button>
-            <input class="search-input" id="searchInput" placeholder="Search Ideas" aria-label="Search Input"></input>
-          </span>
-        </form>
-      </div>
-      <section class="idea-box">
-        <article class="idea-grid">
-          <div class="custom-card hidden"></div>
-        </article>
-      </section>
+<head>
+  <title class="project-title">IdeaBox</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+<body>
+  <aside class="aside-container">
+    <h2 class="aside-title">IdeaBox</h2>
+    <div class="starred-ideas-box">
+      <label class="filter-starred-ideas">Filter Starred Ideas</label>
+      <button class="show-starred-button" id="showStarredButton">Show Starred Ideas</button>
+    </div>
+  </aside>
+  <section class="right-side">
+    <div class="wrapper">
+      <form class="custom-form">
+        <label class="form-label" for="titleInput">Title</label>
+        <input class="user-input title-input" id="titleInput" aria-required="true" maxlength="20"></input>
+        <label class="form-label" for="bodyInput">Body</label>
+        <input class="user-input body-input" id="bodyInput" aria-required="true" maxlength="70"></input>
+        <button class="save-button" id="saveButton" aria-label="Save Button">Save</button>
+        <span class="search-ideas">
+          <button class="search-button" id="searchButton" aria-label="Search Button"></button>
+          <input class="search-input" id="searchInput" placeholder="Search Ideas" aria-label="Search Input"></input>
+        </span>
+      </form>
+    </div>
+    <section class="idea-box">
+      <article class="idea-grid">
+        <div class="custom-card hidden"></div>
+      </article>
+
     </section>
     <script src="./idea.js"></script>
     <script src="./src/main.js"></script>

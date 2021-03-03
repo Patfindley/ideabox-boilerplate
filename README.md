@@ -18,28 +18,30 @@ The project spec & rubric can be found [here](https://frontend.turing.io/project
 *Ideabox: a web app to store, organize, and display user-submitted "idea cards"*
 
 #### Create & Remove Ideas Cards
-- 
+- In this application, a user is able to create an idea card using the title and body inputs. Once they choose a title and body, they can save their card using the "save" button and it will populate in the space below the form. There is a "remove" (X) button in the top right corner of each card that will delete the entire content from both the page and from storage.
 
 #### Add Cards to "Favorites"
-- 
+- Each idea card has "favorite" (star) button in the top left corner that will change from white to red when clicked by the user. The user may also click the "Show Starred" button to filter the cards so that they only see their favorited idea cards.
 
 #### Use "Instant Search" to Filter Cards
-- 
+- A user can search through all of their saved cards using the search bar. Their idea cards will filter as the user types their query, showing only the cards that include their search characters.
 
 #### Web Accessibility
-- 
+- Our application has fully implemented HTML that is accessible for individuals with visual disabilities. Our application passes the WAVE audit tool.
 
 #### Technologies Used
 - JavaScript
 - HTML
 - CSS
 
-#### Additional Tools
-- 
+#### Styling Guides Used
+- Turing Style Guides
+- Single-Responsibility Principle
+- SMACCS
 
 #### Project Links
-- [GitHub Repo] (https://github.com/EllieAzaveda/ideabox-boilerplate)
-- [GitHub Page] (https://ellieazaveda.github.io/ideabox-boilerplate)
+- [GitHub Repo](https://github.com/EllieAzaveda/ideabox-boilerplate)
+- [GitHub Page](https://ellieazaveda.github.io/ideabox-boilerplate)
 
 #### Credits
 ##### Co-Contributors

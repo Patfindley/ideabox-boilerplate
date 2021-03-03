@@ -19,8 +19,4 @@ class Idea {
     localStorage.setItem("ideas", JSON.stringify(savedCards));
     updateCardDisplay();
   }
-
-  updateIdea() {
-
-  }
 }

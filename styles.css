@@ -28,17 +28,6 @@ body {
   margin: 1.5em 1em;
 }
 
-.aside-container {
-  background-color: #1F1F3d;
-  color: #E9E9F3;
-  font-weight: bold;
-  width: 16em;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  height: 100%;
-}
-
 .starred-ideas-box {
   color: #E9E9F3;
   width: 100%;
@@ -51,6 +40,17 @@ body {
 .aside-title {
   font-size: 1.2em;
   padding-left: 1em;
+}
+
+.aside-container {
+  background-color: #1F1F3d;
+  color: #E9E9F3;
+  font-weight: bold;
+  width: 16em;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .filter-starred-ideas {

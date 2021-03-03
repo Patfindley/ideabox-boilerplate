@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <h1><title>IdeaBox</title></h1>
+  <title class="project-title">IdeaBox</title>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
-  <aside>
-    <h2>IdeaBox</h2>
+  <aside class="aside-container">
+    <h2 class="aside-title">IdeaBox</h2>
     <div class="starred-ideas-box">
       <label class="filter-starred-ideas">Filter Starred Ideas</label>
       <button class="show-starred-button" id="showStarredButton">Show Starred Ideas</button>
@@ -16,9 +16,9 @@
   <section class="right-side">
     <div class="wrapper">
       <form class="custom-form">
-        <label for="titleInput">Title</label>
+        <label class="form-label" for="titleInput">Title</label>
         <input class="user-input title-input" id="titleInput" aria-required="true"></input>
-        <label for="bodyInput">Body</label>
+        <label class="form-label" for="bodyInput">Body</label>
         <input class="user-input body-input" id="bodyInput" aria-required="true"></input>
         <button class="save-button" id="saveButton" aria-label="Save Button">Save</button>
         <span class="search-ideas">
@@ -29,22 +29,8 @@
     </div>
     <section class="idea-box">
       <article class="idea-grid">
-      <div class="custom-card hidden">
-        <!-- <nav>
-          <button class="favorite-button" id="favoriteButton" aria-label="Favorite Button"></button>
-          <span class="filler"></span>
-          <button class="remove-button" id="removeButton"  aria-label="Remove Button"></button>
-        </nav>
-        <div class="card-body">
-          <h3 class="title">Title</h3>
-          <p>stuff and things and stuff and super heroes</p>
-        </div>
-        <footer>
-          <button class="comment-button" aria-label="Comment Button"></button>
-          <label class="comment-label" aria-label="Comment">Comment</label>
-        </footer> -->
-      </div>
-    </article>
+        <div class="custom-card hidden"></div>
+      </article>
     </section>
   </section>
   <script src="./idea.js"></script>

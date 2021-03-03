@@ -161,15 +161,15 @@ function assignStarValue(i) {
 function buildHTML(i, status) {
   ideaGrid.innerHTML += `
     <div class="custom-card" id="${savedCards[i].id}">
-      <nav>
+      <nav class="card-buttons">
         <button class="${status}" aria-label="Favorite Button"></button>
         <button class="remove-button" id="removeButton" aria-label="Remove Button"></button>
       </nav>
-      <div class="card-body">
-        <h2>${savedCards[i].title}</h2>
-        <p>${savedCards[i].body} </p>
+      <div class="card-idea">
+        <h2 class="card-title">${savedCards[i].title}</h2>
+        <p class="card-body">${savedCards[i].body} </p>
       </div>
-      <footer>
+      <footer class="comment-container">
         <button class="comment-button" aria-label="Comment Button"></button>
         <label class="comment-label">Comment</label>
       </footer>

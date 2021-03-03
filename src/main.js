@@ -1,4 +1,5 @@
 // target variables
+
 var titleInput = document.getElementById("titleInput");
 var bodyInput = document.getElementById("bodyInput");
 var inputFields = document.querySelectorAll(".user-input");
@@ -11,6 +12,7 @@ var ideaGrid = document.querySelector(".idea-grid");
 var searchInput = document.getElementById("searchInput");
 
 // global variables
+
 var savedCards = [];
 var parsedCards = [];
 var currentCard;
@@ -60,6 +62,7 @@ function removeCard(e) {
         savedCards[i].deleteFromStorage(i);
       }
     }
+
   updateCardDisplay();
   }
 }
@@ -74,10 +77,12 @@ function enableSaveButton() {
     saveButton.disabled = true;
     return;
   }
+
   if (bodyInput.value === "") {
     saveButton.disabled = true;
     return;
   }
+
   else {
     saveButton.disabled = false;
     saveButton.style.backgroundColor = "#363667";
@@ -128,6 +133,7 @@ function instantiateStorage() {
     currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
     currentCard.saveToStorage();
   }
+
   updateCardDisplay();
 }
 
@@ -155,6 +161,7 @@ function assignStarValue(i) {
   } else {
     status = "favorite-button";
   }
+
   return status;
 }
 
@@ -185,6 +192,7 @@ function showStarred() {
       buildHTML(i, status);
     }
   }
+
   showStarredButton.innerText = "Show All Ideas";
 }
 

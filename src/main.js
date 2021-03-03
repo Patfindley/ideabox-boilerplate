@@ -73,14 +73,9 @@ function clearInput() {
 }
 
 function enableSaveButton() {
-  if (titleInput.value === "" || bodyInput.value === "") {
+  if (!titleInput.value || !bodyInput.value) {
     saveButton.disabled = true;
-    return;
-  }
-
-  if (bodyInput.value === "") {
-    saveButton.disabled = true;
-    return;
+    saveButton.style.backgroundColor = "#E7E7FF";
   }
 
   else {

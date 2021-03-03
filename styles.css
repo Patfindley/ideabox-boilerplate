@@ -141,12 +141,12 @@ body {
 }
 
 .search-button {
+  background: url(assets/search.svg);
   border: 0;
   background-size: 70%;
   padding-left: 0;
   width: 3.05em;
   height: 3.05em;
-  background: url(assets/search.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-color:  #363667;
@@ -187,25 +187,25 @@ body {
 }
 
 .favorite-button {
+  background: url(assets/star.svg);
   display: inline;
   border: none;
   width: 13%;
   background-repeat: no-repeat;
-  background: url(assets/star.svg);
 }
 
 .filled-star {
+  background: url(assets/star-active.svg);
   display: inline;
   border: none;
   width: 13%;
-  background: url(assets/star-active.svg);
   background-repeat: no-repeat;
 }
 
 .remove-button {
+  background: url(assets/delete.svg);
   border: none;
   width: 13%;
-  background: url(assets/delete.svg);
   background-repeat: no-repeat;
 }
 
@@ -230,9 +230,9 @@ body {
 }
 
 .comment-button {
+  background: url(assets/comment.svg);
   border: 0;
   width: 18%;
-  background: url(assets/comment.svg);
   background-repeat: no-repeat;
 }
 

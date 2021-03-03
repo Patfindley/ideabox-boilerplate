@@ -70,7 +70,7 @@ function clearInput() {
 }
 
 function enableSaveButton() {
-  if (titleInput.value === "" && bodyInput.value === "") {
+  if (titleInput.value === "" || bodyInput.value === "") {
     saveButton.disabled = true;
     return;
   }

@@ -1,22 +1,34 @@
 // target variables
 
 var titleInput = document.getElementById("titleInput");
+
 var bodyInput = document.getElementById("bodyInput");
+
 var inputFields = document.querySelectorAll(".user-input");
-var saveButton = document.getElementById("saveButton");
-var removeButton = document.getElementById("removeButton");
-var favoriteButton = document.getElementById("favoriteButton");
+
 var customCard = document.querySelector(".custom-card");
+
+var saveButton = document.getElementById("saveButton");
+
+var removeButton = document.getElementById("removeButton");
+
+var favoriteButton = document.getElementById("favoriteButton");
+
 var showStarredButton = document.getElementById("showStarredButton");
+
 var ideaGrid = document.querySelector(".idea-grid");
+
 var searchInput = document.getElementById("searchInput");
+
 
 // global variables
 
 var savedCards = [];
+
 var currentCard;
 
 saveButton.disabled = true;
+
 
 // event listeners
 
@@ -26,14 +38,11 @@ saveButton.addEventListener("click", function(event) {
   saveToArray(event);
 });
 
-showStarredButton.addEventListener("click", function(event) {
-  toggleShowStarred();
-});
-
 for(const inputField of inputFields) {
-inputField.addEventListener("input", function() {
-  enableSaveButton();
-})};
+inputField.addEventListener("input", enableSaveButton)
+};
+
+showStarredButton.addEventListener("click", toggleShowStarred);
 
 ideaGrid.addEventListener("click", function(event) {
   removeCard(event);
@@ -41,6 +50,7 @@ ideaGrid.addEventListener("click", function(event) {
 });
 
 searchInput.addEventListener("input", filterSearch);
+
 
 // functions
 
@@ -61,7 +71,6 @@ function removeCard(e) {
         savedCards[i].deleteFromStorage(i);
       }
     }
-
   updateCardDisplay();
   }
 }
@@ -103,7 +112,6 @@ function addFavorite(e) {
         savedCards[i].isStarred = false;
       }
     }
-
   storage.clear();
   localStorage.setItem("ideas", JSON.stringify(savedCards));
   }
@@ -129,7 +137,6 @@ function instantiateStorage(parsedCards) {
     currentCard = new Idea(parsedCards[i].title, parsedCards[i].body, parsedCards[i].isStarred, parsedCards[i].id, parsedCards[i].comments);
     currentCard.saveToStorage();
   }
-
   updateCardDisplay();
 }
 
@@ -157,7 +164,6 @@ function assignStarValue(i) {
   } else {
     status = "favorite-button";
   }
-
   return status;
 }
 
@@ -193,13 +199,12 @@ function showStarred() {
 }
 
   function filterSearch() {
-  // var status;
   ideaGrid.innerHTML = "";
   for (var i = 0; i < savedCards.length; i++) {
     var status = assignStarValue(i);
     if (savedCards[i].title.toLowerCase().includes(searchInput.value.toLowerCase())
       || savedCards[i].body.toLowerCase().includes(searchInput.value.toLowerCase())) {
-      buildHTML(i, status);
+        buildHTML(i, status);
     }
     if (searchInput.value === "") {
       renderHTML();

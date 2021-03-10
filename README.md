@@ -43,7 +43,7 @@ The project spec & rubric can be found [here](https://frontend.turing.io/project
 
 #### Project Links
 - [GitHub Repo](https://github.com/EllieAzaveda/ideabox-boilerplate)
-- [GitHub Page](https://ellieazaveda.github.io/ideabox-boilerplate)
+- [GitHub Page](https://patfindley.github.io/ideabox-boilerplate/.)
 
 #### Credits
 ##### Co-Contributors
